@@ -1,0 +1,66 @@
+body {
+    line-height: 1.5;
+    font-size: 1rem;
+}
+i {
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+.main {
+    margin: 0;
+    padding: 0;
+}
+.root {
+    width: 100vw;
+}
+.main .col {
+    height: 100vh;
+    padding: 0;
+}
+.nav-1 i {
+    font-size: 1.5rem;
+}
+.main .nav-1 a{
+    padding: 5px;
+    color: white;
+}
+.main a:active {
+    color: white;
+}
+.main ul {
+    list-style-type: none;
+    padding: 0
+}
+.main .nav-1 {
+    background-color: black;
+    color: red;
+    padding: 0;
+    max-width: 95px;
+}
+.nav-1 li {
+    padding: 7px 0;
+    font-family: Helvetica;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 13px;
+    cursor: pointer;
+}
+.nav-1 .active {
+    background-color: white
+}
+
+.nav-2 li {
+    padding: 5px 0 5px 20px;
+}
+.nav-2 li a {
+    color: rgb(194, 35, 35);
+    padding: 8px 5px;
+}
+.nav-2 .active {
+    border-left: 2px solid black;
+    color: black
+}
