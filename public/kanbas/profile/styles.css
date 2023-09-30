@@ -26,10 +26,15 @@ h2 {
 .main .main-col .avatar {
     font-size: 8rem;
 }
-.top-right-btn {
+.top {
+    top: 75px;
+}
+.place-right {
     position: absolute;
-    right: 15px;
-    
+    right: 25px;
+}
+.temp {
+    float: right;
 }
 .tr-btn {
     color: rgb(102, 98, 98);

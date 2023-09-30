@@ -19,6 +19,45 @@ a {
     height: 100vh;
     padding: 0;
 }
+.pos-absolute {
+    position: absolute;
+}
+.color-red {
+    color: rgb(194, 35, 35);
+}
+.center-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.width-auto{ 
+    width: auto;
+}
+.main ul {
+    list-style-type: none;
+    padding: 0
+}
+.fw-300 {
+    font-weight: 300;
+}
+.fw-500 {
+    font-weight: 500;
+}
+.tl-center {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .nav-1 i {
     font-size: 1.5rem;
 }
@@ -29,10 +68,7 @@ a {
 .main a:active {
     color: white;
 }
-.main ul {
-    list-style-type: none;
-    padding: 0
-}
+
 .main .nav-1 {
     background-color: black;
     color: red;
@@ -53,6 +89,11 @@ a {
     background-color: white
 }
 
+.main .nav-2 {
+    max-width: 200px;
+    margin-right: 10px;
+}
+
 .nav-2 li {
     padding: 5px 0 5px 20px;
 }
@@ -70,15 +111,4 @@ a {
 .btn-border:hover {
     border: 1px solid rgb(185, 181, 181);
     filter: brightness(90%);
-}
-.color-red {
-    color: rgb(194, 35, 35);
-}
-.center-align {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.width-auto{ 
-    width: auto;
 }

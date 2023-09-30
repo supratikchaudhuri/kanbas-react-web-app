@@ -14,7 +14,7 @@
 <body>
     <div class="container main">
         <div class="row root">
-            <div class="col-1 nav-1">
+            <div class="col-1 nav-1 fixed">
                 <ul>
                     <li>
                         <img src="../images/neu_logo.png" style="max-width: 60px;" alt="NEU-logo">
@@ -85,7 +85,7 @@
                         <a href="#">The Hub</a>
                     </li>
                     <li>
-                        <a href="settings/course-details.html">Settings</a>
+                        <a href="../settings/course-details.html">Settings</a>
                     </li>
                     <li>
                         <a href="#">Quickly Course Tools</a>
@@ -96,66 +96,94 @@
                 </ul>
             </div>
     
-            <div class="col main-col">
-                <i class="fa fa-user-circle avatar" aria-hidden="true" style="color: #b2b4b7; display: block;"></i>
-                <a href="index.html" class="top-right-btn">
-                    <button class="btn btn-light tr-btn btn-border">
-                        <i class="fa fa-pencil" aria-hidden="true"></i>
-                        Cancel Editing
-                    </button>
-                </a>
-                
-                <label for="name-input">Name:*</label>
-                <input type="text" class="form-control" id="name-input" value="Supratik Chaudhuri">
-
-                <label for="name-input">Pronouns:</label>
-                
-
-                <label for="title-input">Title</label>
-                <input type="text" class="form-control" id="title-input" value="Mr.">
-
-                <h3 class="title mt-4">Contact</h3>
-                <p>No regitered services</p>
-
-                <h3 class="title mt-4">Biography</h3>
-                <textarea class="form-control" rows="3"></textarea>
-
-                <h3 class="title mt-4">Links</h3>
-                <form>
-                    <div class="row center-align">
-                      <div class="col">
-                        <input type="text" class="form-control">
-                      </div>
-                      <div class="col-1 width-auto">
-                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control">
-                      </div>
-                      <div class="col-1 width-auto color-red">
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                      </div>
-                    </div>
-
-                    <div class="row center-align mt-2">
-                      <div class="col">
-                        <input type="text" class="form-control">
-                      </div>
-                      <div class="col-1 width-auto">
-                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control">
-                      </div>
-                      <div class="col-1 width-auto color-red">
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                      </div>
-                    </div>
-                  </form>
+            <div class="col-9 main-col">
+                <i class="fa fa-bars bars" aria-hidden="true"></i>
+                <h4>Supratik's Profile</h4>
 
                 <hr/>
-                <button type="button" class="btn btn-light btn-border">Cancel</button>                  
-                <button type="button" class="btn btn-danger btn-border">Save Profile</button>                  
+
+                <div class="row">
+                    <div class="col-10">
+                        <i class="fa fa-user-circle avatar" aria-hidden="true" style="color: #b2b4b7; display: block;"></i>
+                
+                        <label for="name-input" class=" fw-500">Name:*</label>
+                        <input type="text" class="form-control" id="name-input" value="Supratik Chaudhuri">
+
+                        <label for="name-input" class=" fw-500">Pronouns:</label>
+                        
+
+                        <label for="title-input" class=" fw-500">Title</label>
+                        <input type="text" class="form-control" id="title-input" value="Mr.">
+
+                        <h3 class="title mt-4">Contact</h3>
+                        <p>No regitered services</p>
+
+                        <h3 class="title mt-4">Biography</h3>
+                        <textarea class="form-control" rows="3"></textarea>
+
+                        <h3 class="title mt-4">Links</h3>
+                        <form>
+                            <div class="row center-align">
+                                <div class="col tl-center fw-500">
+                                    Title
+                                </div>
+                                <div class="col tl-center fw-500">
+                                    URL
+                                </div>
+                            </div>
+                            <div class="row center-align">
+                                <div class="col">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-1 width-auto">
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-1 width-auto color-red">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </div>
+                            </div>
+
+                            <div class="row center-align mt-2">
+                                <div class="col">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-1 width-auto">
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-1 width-auto color-red">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </form>
+
+                        <hr/>
+                        <div class="temp">
+                            <a href="index.html">
+                                <button type="button" class="btn btn-light btn-border">Cancel</button>                  
+                            </a>
+                            <a href="index.html">
+                                <button type="button" class="btn btn-danger btn-border">Save Profile</button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <a href="index.html" class="place-right top">
+                            <button class="btn btn-light tr-btn btn-border">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                Cancel Editing
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                
             </div>
         </div>
     </div>
