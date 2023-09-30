@@ -15,7 +15,7 @@ a {
 .root {
     width: 100vw;
 }
-.main .col {
+.main .nav {
     height: 100vh;
     padding: 0;
 }
@@ -63,4 +63,22 @@ a {
 .nav-2 .active {
     border-left: 2px solid black;
     color: black
+}
+.btn-border {
+    border: 1px solid rgb(185, 181, 181);
+}
+.btn-border:hover {
+    border: 1px solid rgb(185, 181, 181);
+    filter: brightness(90%);
+}
+.color-red {
+    color: rgb(194, 35, 35);
+}
+.center-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.width-auto{ 
+    width: auto;
 }
