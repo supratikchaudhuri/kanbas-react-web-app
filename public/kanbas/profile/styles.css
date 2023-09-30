@@ -5,9 +5,6 @@
 .main-col .bars, .main-col .link {
     color: rgb(194, 35, 35);
 }
-hr {
-    margin-bottom: 30px;
-}
 h4 {
     font-weight: 300;
     display: inline;
@@ -28,13 +25,6 @@ h2 {
 }
 .top {
     top: 75px;
-}
-.place-right {
-    position: absolute;
-    right: 25px;
-}
-.temp {
-    float: right;
 }
 .tr-btn {
     color: rgb(102, 98, 98);
