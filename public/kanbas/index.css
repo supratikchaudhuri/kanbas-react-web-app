@@ -104,9 +104,10 @@ a {
     color: red;
     padding: 0;
     max-width: 95px;
-    position: fixed;
-    overflow-y: auto;
-    height: 100%;   
+    /* position: fixed; */
+    /* margin-right: 90px; */
+    /* overflow-y: auto; */
+    /* height: 100%;    */
 }
 .nav-1 li {
     padding: 7px 0;
