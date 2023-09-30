@@ -1,0 +1,27 @@
+.dashboard {
+    margin-left: 90px;
+}
+.card-container {
+    margin-left: -30px;
+}
+.dashboard .course-card {
+    width: 250px;
+    padding: 0;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+.dashboard .card-title {
+    color : rgb(12, 117, 245);
+    font-size: 16px;
+}
+.course-card i {
+    font-size: 20px;
+    color: rgb(163, 160, 160);
+    padding: 15px;
+}
+
+@media (min-width: 768px) {
+    .dashboard .course-card {
+        flex: 0 0 calc(max(100%/5   , 250px));
+    }  
+}
