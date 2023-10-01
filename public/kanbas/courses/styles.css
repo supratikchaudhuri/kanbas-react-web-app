@@ -1,3 +1,6 @@
+.extra {
+    max-width: 250px;
+}
 .breadcrumb {
     margin: 12px 0 10px 0;
     font-size: 1.2rem;
@@ -29,4 +32,12 @@
 }
 .extra a {
     font-size: 14px;
+}
+.custom-green {
+    background-color: rgb(95, 172, 95);
+    color: white;
+}
+.custom-green:hover {
+    filter: brightness(90%);
+    color: white;
 }
