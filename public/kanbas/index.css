@@ -58,6 +58,7 @@ a {
 }
 .kanbas-btn-gray {
     color: rgb(102, 98, 98);
+    border: 1px solid rgb(185, 181, 181);
 }
 .kanbas-btn-gray:hover {
     color: rgb(102, 98, 98);
@@ -80,6 +81,7 @@ a {
     font-size: 1.5rem;
     font-weight: 400;
 }
+
   
 
 
