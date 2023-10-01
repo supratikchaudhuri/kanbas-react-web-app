@@ -1,8 +1,8 @@
-.main .main-col {
+.main .profile-details {
     margin-top: 20px;
     padding: 0 20px;
 }
-.main-col .bars, .main-col .link {
+.profile-details .bars, .profile-details .link {
     color: rgb(194, 35, 35);
 }
 h4 {
@@ -20,7 +20,7 @@ h2 {
     font-weight: 300;
     font-size: 30px;
 }
-.main .main-col .avatar {
+.main .profile-details .avatar {
     font-size: 8rem;
 }
 .top {
