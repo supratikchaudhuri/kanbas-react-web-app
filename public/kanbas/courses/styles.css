@@ -1,0 +1,20 @@
+.breadcrumb {
+    margin: 12px 0 10px 0;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 200;
+}
+.new-module {
+    margin: 20px 0;
+  
+}
+.new-module li {
+    /* font-size:  1.3rem; */
+    padding-left: 40px;
+}
+.new-module li:first-child, .new-module .sub-heading {
+    font-size: 1rem;
+    padding-left: 10px;
+}

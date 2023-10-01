@@ -17,7 +17,7 @@ a {
 .root {
     width: 100%;
     margin-left: 95px;
-    padding-left: 13px; 
+    padding-left: 20px; 
 }
 .main .nav {
     height: 100vh;
@@ -64,6 +64,21 @@ a {
     color: rgb(102, 98, 98);
     background-color: rgb(225, 225, 225);
 }
+.kanbas-red-btn {
+    color: white;
+    background-color: rgb(194, 35, 35);
+}
+.kanbas-red-btn:hover {
+    color: white;
+    background-color: rgb(194, 35, 35);
+    filter: brightness(90%);
+}
+.color-gray {
+    color: rgb(102, 98, 98);
+}
+.color-green {
+    color: rgb(5, 150, 5);  
+}
 .pointer {
     cursor: pointer;
 }
@@ -80,6 +95,12 @@ a {
 .sub-heading {
     font-size: 1.5rem;
     font-weight: 400;
+}
+.hover-underline:hover {
+    text-decoration: underline;
+}
+.inline {
+    display: inline;
 }
 
   
@@ -169,8 +190,12 @@ a {
     padding: 8px 5px;
 }
 */
+.root {
+    
+}
 .nav-2 {
     max-width: 200px;
+    padding: 0;
 }
 .nav-2 li{
     padding: 5px 0;

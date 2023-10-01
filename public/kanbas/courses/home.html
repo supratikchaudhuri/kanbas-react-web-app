@@ -64,7 +64,19 @@
         </div>
 
         <div class="row root">
-            <h1 class="heading">Dashboard</h1>
+            
+            <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
+
+            <div class="breadcrumb">
+                <i class="fa-solid fa-bars color-red"></i>
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="ms-4">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a class="hover-underline color-red" href="#">CS5610.17367.202410</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Home</li>
+                    </ol>
+                </nav>
+            </div>
+            
             <hr/>
 
             <div class="col-2 nav-2">
@@ -97,63 +109,164 @@
                     <select>
                         <option selected>Publish All</option>
                     </select>
-                    <button class="btn kanbas-btn-gray">Module</button>
+                    <button class="btn kanbas-red-btn"> + Module</button>
                 </div>
                 
                 <hr class="mt-5"/>
 
-                <ul>
-                    <li>
+                <ul class="list-group new-module">
+                    <li class="list-group-item list-group-item-secondary">
                         Week0- Intro
-                        <ul>
-                            <li>Learning Objectives</li>
-                            <ul>
-                                <li>Introduction to the Course</li>
-                                <li>Learning what is web dev</li>
-                                <li>Creating a deployment environment</li>
-                                <li>Creating a web application</li>
-                                <li>Getting started with first assignment</li>
-                            </ul>
-
-                            <li>Reading</li>
-                            <ul>
-                                <li>Full Stack ..</li>
-                                <li>Book 2</li>
-                            </ul>
-
-                            <li>Slides</li>
-                            <ul>
-                                <li><a href="#">Introduction to web dev</a></li>
-                                <li><a href="#">Creating an HTTP server with node js</a></li>
-                                <li><a href="#">Creating a React Application</a></li>
-                            </ul>
-                        </ul>
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-plus float-end ms-3" aria-hidden="true"></i>
+                        <i class="fa fa-caret-down float-end ms-1" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
                     </li>
 
-                    <li>
+                    <li class="list-group-item sub-heading"> 
+                        Learning Objectives
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+           
+                    </li>
+                    <li class="list-group-item">
+                        Introduction to the Course
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+                    <li class="list-group-item">
+                        Learning what is web dev
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+                    <li class="list-group-item">
+                        Creating a deployment environment
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+                    <li class="list-group-item">
+                        Creating a web application
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+                    <li class="list-group-item">
+                        Getting started with first assignment
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+
+                    <li class="list-group-item sub-heading">
+                        Reading
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+                    <li class="list-group-item">
+                        Full Stack Development Chapter-1
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+                    <li class="list-group-item">
+                        Full Stack Development Chapter-2
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+
+                    <li class="list-group-item sub-heading">Slides
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://github.com/supratikchaudhuri/kanbas-react-web-app" class="link color-red">
+                            <i class="fa fa-link" style="color: rgb(140, 138, 138)" aria-hidden="true"></i>
+                            Creating an HTTP server with node js
+                            <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                            <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://github.com/supratikchaudhuri/kanbas-react-web-app" class="link color-red">
+                            <i class="fa fa-link" style="color: rgb(140, 138, 138)" aria-hidden="true"></i>
+                            Creating a React Application
+                            <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                            <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="list-group new-module">
+                    <li class="list-group-item list-group-item-secondary">
                         Week1- HTML
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-plus float-end ms-3" aria-hidden="true"></i>
+                        <i class="fa fa-caret-down float-end ms-1" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
 
-                        <ul>
-                            <li>LEARNING OBJECTIVES</li>
-                            <ul>
-                                <li>Learning How to Create user interfaces with HTML</li>
-                                <li>Keep Working on Assignments</li>
-                                <li>Deploy the Asssignment to Netlify</li>
-                            </ul>
+                    <li class="list-group-item sub-heading">
+                        Learning Objectives
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+                    <li class="list-group-item">
+                        Learning How to Create user interfaces with HTML
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+                    <li class="list-group-item">
+                        Keep Working on Assignments
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+                    <li class="list-group-item">
+                        Deploy the Asssignment to Netlify
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
 
-                            <li>READING</li>
-                            <ul>
-                                <li>Full Stack Developer- Chapter 1- Introduction</li>
-                                <li>Full Stack Developer- Chapter 2- Creating User</li>
-                            </ul>
+                    <li class="list-group-item sub-heading">
+                        Reading
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+                    <li class="list-group-item">
+                        Full Stack Development Chapter-1
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+                    <li class="list-group-item">
+                        Full Stack Development Chapter-2
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
 
-                            <li>SLIDES</li>
-                            <ul>
-                                <li><a href="#">Creating Web Forms</a></li>
-                                <li><a href="#">Navigation With Anchors</a></li>
-                                <li><a href="#">Embedding Contents with Iframes</a></li>
-                            </ul>
-                        </ul>
+                    <li class="list-group-item sub-heading">Slides
+                        <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://github.com/supratikchaudhuri/kanbas-react-web-app" class="link color-red">
+                            <i class="fa fa-link" style="color: rgb(140, 138, 138)" aria-hidden="true"></i>
+                            Creating Web Forms
+                            <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                            <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://github.com/supratikchaudhuri/kanbas-react-web-app" class="link color-red">
+                            <i class="fa fa-link" style="color: rgb(140, 138, 138)" aria-hidden="true"></i>
+                            Navigation With Anchors
+                            <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                            <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://github.com/supratikchaudhuri/kanbas-react-web-app" class="link color-red">
+                            <i class="fa fa-link" style="color: rgb(140, 138, 138)" aria-hidden="true"></i>
+                            Embedding Contents with Iframes
+                            <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                            <i class="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
