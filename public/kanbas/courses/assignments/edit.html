@@ -103,8 +103,8 @@
 
             <div class="col edit-page">
                 <div class="float-end">
-                    <i class="fa fa-check-circle color-green" aria-hidden="true"></i>
-                    <label class="float-end  ms-1 color-green">Published</label>
+                    <i class="fa-solid fa-circle-check color-green"></i>
+                    <label class=" ms-1 color-green">Published</label>
                 </div>
 
                 <hr class="mt-5"/>
@@ -114,20 +114,103 @@
             
                 <textarea rows="5" class="form-control mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo consequuntur illo inventore recusandae dolores fuga, atque labore reiciendis cupiditate harum laborum, odio fugiat obcaecati maxime. Perferendis dolorem earum quos eos magnam distinctio! Explicabo dolore itaque animi, delectus sed porro temporibus enim ad modi corporis, mollitia corrupti doloremque facere eveniet tempora.</textarea>
 
-                <form class="edit-ass-form mt-2">
+                <form class="edit-ass-form ">
                     <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-2 col-form-label float-end">Email</label>
+                        <label for="points" class="col-sm-2 col-form-label ta-right ">Points</label>
                         <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                            <input id="points" type="text" readonly class="form-control-plaintext" value="100">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                        <label for="ass-grp" class="col-sm-2 col-form-label ta-right">Assignment Group</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            <input id="ass-grp" type="text" class="form-control" value="ASSIGNMENTS">
                         </div>
                     </div>
-                  </form>
+                    <div class="form-group row">
+                        <label for="grade-diplay" class="col-sm-2 col-form-label ta-right">Dispplay Grade As</label>
+                        <div class="col-sm-10">
+                            <input id="grade-display" type="text" class="form-control" value="PERCENTAGE Dropdown">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="grade-diplay" class="col-sm-2 col-form-label"></label>
+                        <div class="col-sm-10">
+                            <input class="form-check-input" type="checkbox" value="" id="include-in-final-grade">
+                            <label class="form-check-label" for="include-in-final-grade">
+                                Do not count this assignment towards final grade
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label ta-right">Submission Type</label>
+                        <div class="col-sm-10 sub-type-box">
+                            Dropdown
+                            <h5>Online Entry Options</h5>
+
+                            <div class="entry-type">
+                                <input class="form-check-input" type="checkbox" value="" id="entry-type-text-entry" checked>
+                                <label class="form-check-label" for="entry-type-text-entry">
+                                    Text Entry
+                                </label>
+                            </div>
+                            
+                            <div>
+                                <input class="form-check-input" type="checkbox" value="" id="entry-type-url" checked>
+                                <label class="form-check-label" for="entry-type-url">
+                                    Website URL
+                                </label>
+                            </div>
+                            
+                            <div>
+                                <input class="form-check-input" type="checkbox" value="" id="entry-type-rec" checked>
+                                <label class="form-check-label" for="entry-type-rec">
+                                    Media Recordings
+                                </label>
+                            </div>
+
+                            <div>
+                                <input class="form-check-input" type="checkbox" value="" id="entry-type-annotation">
+                                <label class="form-check-label" for="entry-type-annotation">
+                                    Student Annotations
+                                </label>
+                            </div>
+
+                            <div>
+                                <input class="form-check-input" type="checkbox" value="" id="entry-type-upload">
+                                <label class="form-check-label" for="entry-type-upload">
+                                    File Uploads
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label ta-right">Assign</label>
+                        <div class="col-sm-10 sub-type-box">
+                            Dropdown
+                            <h5>Assign To</h5>
+
+                            <h5>Due</h5>
+                            <input class="date-picker width-100" type="date" >
+                            
+                            <div class="row">
+                                <div class="col">
+                                    <h5>Available From</h5>
+                                    <input class="date-picker width-100" type="date" >
+                                </div>
+                                <div class="col">
+                                    <h5>Until</h5>
+                                    <input class="date-picker width-100" type="date" >
+                                </div>
+                            </div>
+                
+                            <button class="mt-3 width-100 kanbas-btn-gray">+ Add</button>
+                        </div>
+                    </div>
+                </form>
 
 
                 <hr/>
@@ -136,9 +219,9 @@
                 <label class="form-check-label" for="ass-edited-notify-users-checkbox">
                     Notify users that this content has changed
                 </label>
-                <div class="float-end">
-                    <button class="btn kanbas-btn-gray">Cancel</button>
-                    <button class="btn kanbas-red-btn">Save</button>
+                <div class="float-end mb-5">
+                    <a href="index.html"><button class="btn kanbas-btn-gray">Cancel</button></a>
+                    <a href="index.html"><button class="btn kanbas-red-btn">Save</button></a>
                 </div>
             </div>
 
