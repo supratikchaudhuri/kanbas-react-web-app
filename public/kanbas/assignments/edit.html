@@ -3,10 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link type="text/css" rel="stylesheet" href="../index.css">
+    <link type="text/css" rel="stylesheet" href="styles.css">
+
     <title>Edit Assignment</title>
 </head>
 <body>
-    <table width="100%">
+    <div class="container main">
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <img src="../images/neu_logo.png" style="max-width: 60px;" alt="NEU-logo">
+                </li>
+                <li>
+                    
+                    <a 
+                        href="../account-navigation.html">
+                        <i class="fa fa-user-circle" aria-hidden="true" style="color: #e2e7ee;"></i>
+                        Account
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-tachometer" aria-hidden="true"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="../course-navigation.html">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        Courses
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-inbox" aria-hidden="true"></i>
+                        Inbox
+                    </a>
+                </li>
+                <li>
+                    
+                    <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>Calender</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-regular fa-clock"></i>History</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-film"></i>Studio</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-terminal" aria-hidden="true"></i>Commons</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i>Help</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row root">
+
+            <div class="breadcrumb">
+                <i class="fa-solid fa-bars color-red"></i>
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="ms-4">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a class="hover-underline color-red" href="#">CS5610.17367.202410</a></li>
+                      <li class="breadcrumb-item" aria-current="page"><a class="hover-underline color-red" href="#">Assignments</a></li>
+                      <li class="breadcrumb-item black-text" aria-current="page">A1- ENV + HTML</li>
+                    </ol>
+                </nav>
+            </div>
+            
+            <hr/>
+
+            <div class="col-2 nav-2">
+                <ul>
+                    <li><a class ="color-red" href="home.html">Home</a></li>
+                    <li><a class ="color-red" href="#">Modules</a></li>
+                    <li><a class ="color-red" href="#">Piazza</a></li>
+                    <li><a class ="color-red" href="#">Zoom Meetings</a></li>
+                    <li class = "active"><a href="assignments/index.html">Assignments</a></li>
+                    <li><a class ="color-red" href="#">Quizes</a></li>
+                    <li><a class ="color-red" href="grades.html">Grades</a></li>
+                    <li><a class ="color-red" href="#">People</a></li>
+                    <li><a class ="color-red" href="#">Panopto Video</a></li>
+                    <li><a class ="color-red" href="#">Discussions</a></li>
+                    <li><a class ="color-red" href="#">Announcements</a></li>
+                    <li><a class ="color-red" href="#">Pages</a></li>
+                    <li><a class ="color-red" href="#">Files</a></li>
+                    <li><a class ="color-red" href="#">Rubrics</a></li>
+                    <li><a class ="color-red" href="#">Outcomes</a></li>
+                    <li><a class ="color-red" href="#">Collaboration</a></li>
+                    <li><a class ="color-red" href="#">Syllabus</a></li>
+                    <li><a class ="color-red" href="settings/course-details.html">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="col edit-page">
+                <div class="float-end">
+                    <i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+                    <label class="float-end  ms-1 color-green">Published</label>
+                </div>
+
+                <hr class="mt-5"/>
+                
+                <label for="ass-name">Assignment Name</label>
+                <input id="ass-name" type="text" class="form-control mt-1" value="A1- ENV + HTML">
+            
+                <textarea rows="5" class="form-control mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo consequuntur illo inventore recusandae dolores fuga, atque labore reiciendis cupiditate harum laborum, odio fugiat obcaecati maxime. Perferendis dolorem earum quos eos magnam distinctio! Explicabo dolore itaque animi, delectus sed porro temporibus enim ad modi corporis, mollitia corrupti doloremque facere eveniet tempora.</textarea>
+
+                <form class="edit-ass-form mt-2">
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label float-end">Email</label>
+                        <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div>
+                    </div>
+                  </form>
+
+
+                <hr/>
+
+                <input class="form-check-input" type="checkbox" value="" id="ass-edited-notify-users-checkbox">
+                <label class="form-check-label" for="ass-edited-notify-users-checkbox">
+                    Notify users that this content has changed
+                </label>
+                <div class="float-end">
+                    <button class="btn kanbas-btn-gray">Cancel</button>
+                    <button class="btn kanbas-red-btn">Save</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <table width="100%">
         <tr>
             <td valign="top">
                 <ul>
@@ -182,6 +321,6 @@
 
             </td>
         </tr>
-    </table>
+    </table> -->
 </body>
 </html>
