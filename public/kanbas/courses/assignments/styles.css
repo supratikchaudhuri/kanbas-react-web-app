@@ -31,41 +31,13 @@
 .assignments li:not(:first-child) {
     border-left: 4px solid green;
 }
-.edit-ass-form div {
-    margin-top: 5px;
-}
-.edit-ass-form h5 {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 0;
-}
-.edit-ass-form .sub-type-box {
-    border: 1px solid rgb(198, 195, 195);
-    width: 50%;
-    margin-left: 15px;
-    border-radius: 1%;
-    padding: 10px;
-}
 .sub-type-box select {
     max-width: 50%;
 }
 .sub-type-box .entry-type {
     display: block;
 }
-.edit-ass-form .date-picker {
-    border: 1px solid rgb(198, 195, 195);
-    color :gray;
-    padding: 5px;
-    border-radius: 3px;
-}
-.edit-ass-form .assign-footer {
-    width: 100%;
-    background-color: rgb(198, 195, 195);
-    text-align: center;
-    border: 1px solif gray;
-    font-size: 20px;
-    cursor: pointer;
-}
+
 .assign-footer p {
     margin-bottom: 0;
 }

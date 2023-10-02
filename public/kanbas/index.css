@@ -2,6 +2,7 @@ body {
     line-height: 1.5;
     font-size: 1rem;
     font-family: Helvetica;
+    margin-bottom: 30px;
 }
 i {
     cursor: pointer;
@@ -33,10 +34,10 @@ select{
     margin-left: 95px;
     padding-left: 20px; 
 }
-.main .nav {
+/* .main .nav {
     height: 100vh;
     padding: 0;
-}
+} */
 .pos-absolute {
     position: absolute;
 }
@@ -58,6 +59,9 @@ select{
 .width-100 {
     width: 100%;
 }
+.mw-40 {
+    max-width: 40%;
+}
 .height-auto {
     height: auto;
 }
@@ -67,6 +71,12 @@ select{
 .main ul {
     list-style-type: none;
     padding: 0
+}
+.italics {
+    font-style: italic;
+}
+.lh-1 {
+    line-height: 1rem;
 }
 .fw-300 {
     font-weight: 300 !important;
@@ -100,11 +110,11 @@ select{
 }
 .kanbas-red-btn {
     color: white;
-    background-color: rgb(194, 35, 35);
+    background-color: rgb(221, 48, 48);
 }
 .kanbas-red-btn:hover {
     color: white;
-    background-color: rgb(194, 35, 35);
+    background-color: rgb(221, 48, 48);
     filter: brightness(90%);
 }
 .color-gray {
@@ -139,9 +149,15 @@ select{
 .black-text {
     color: black !important;
 }
-
+.kanbas-tabs li .nav-link {
+    color: rgb(194, 35, 35);
+}
+.kanbas-tabs .nav-link.active {
+    color: black;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
   
-
 
 
 /* Sidebar in black color */
@@ -221,4 +237,39 @@ select{
 
 .edit-page label {
     font-size: 16px;
+}
+
+
+
+
+/* Edit Form */
+.edit-ass-form div {
+    margin-top: 5px;
+    /* color: rgb(91, 91, 91) !important; */
+}
+.edit-ass-form h5 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.edit-ass-form .sub-type-box {
+    border: 1px solid rgb(198, 195, 195);
+    width: 50%;
+    margin-left: 15px;
+    border-radius: 1%;
+    padding: 10px;
+}
+.edit-ass-form .date-picker {
+    border: 1px solid rgb(198, 195, 195);
+    color :gray;
+    padding: 5px;
+    border-radius: 3px;
+}
+.edit-ass-form .assign-footer {
+    width: 100%;
+    background-color: rgb(198, 195, 195);
+    text-align: center;
+    border: 1px solif gray;
+    font-size: 20px;
+    cursor: pointer;
 }
