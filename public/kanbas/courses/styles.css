@@ -32,3 +32,6 @@
     filter: brightness(90%);
     color: white;
 }
+.new-module li:not(:first-child) {
+    border-left: 4px solid green;
+}
