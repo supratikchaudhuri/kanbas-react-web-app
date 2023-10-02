@@ -13,6 +13,11 @@ a {
 select{
     font-family: 'FontAwesome 5 Free', 'Helvetica';
 }
+.centered {
+    margin-left:auto !important; 
+    margin-right:auto !important;
+    width: 100% !important;
+}
 .main {
     margin: 0;
     padding: 0;
@@ -20,7 +25,7 @@ select{
 }
 .root {
     width: 100%;
-    margin-left: 95px;
+    margin-left: 35px;
     padding-left: 20px; 
 }
 .main .nav {
