@@ -46,6 +46,9 @@
     border-radius: 1%;
     padding: 10px;
 }
+.sub-type-box select {
+    max-width: 50%;
+}
 .sub-type-box .entry-type {
     display: block;
 }

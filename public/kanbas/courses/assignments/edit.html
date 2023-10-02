@@ -19,15 +19,14 @@
                     <img src="../../images/neu_logo.png" style="max-width: 60px;" alt="NEU-logo">
                 </li>
                 <li>
-                    
                     <a 
-                        href="../account-navigation.html">
+                        href="../../profile/index.html">
                         <i class="fa fa-user-circle" aria-hidden="true" style="color: #e2e7ee;"></i>
                         Account
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../../dashboard/index.html">
                         <i class="fa fa-tachometer" aria-hidden="true"></i>
                         Dashboard
                     </a>
@@ -80,13 +79,13 @@
 
             <div class="col-2 nav-2">
                 <ul>
-                    <li><a class ="color-red" href="home.html">Home</a></li>
+                    <li><a class ="color-red" href="../home.html">Home</a></li>
                     <li><a class ="color-red" href="#">Modules</a></li>
                     <li><a class ="color-red" href="#">Piazza</a></li>
                     <li><a class ="color-red" href="#">Zoom Meetings</a></li>
-                    <li class = "active"><a href="assignments/index.html">Assignments</a></li>
+                    <li class = "active"><a href="../assignments/index.html">Assignments</a></li>
                     <li><a class ="color-red" href="#">Quizes</a></li>
-                    <li><a class ="color-red" href="grades.html">Grades</a></li>
+                    <li><a class ="color-red" href="../grades/grades.html">Grades</a></li>
                     <li><a class ="color-red" href="#">People</a></li>
                     <li><a class ="color-red" href="#">Panopto Video</a></li>
                     <li><a class ="color-red" href="#">Discussions</a></li>
@@ -122,19 +121,28 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="ass-grp" class="col-sm-2 col-form-label ta-right">Assignment Group</label>
-                        <div class="col-sm-10">
-                            <input id="ass-grp" type="text" class="form-control" value="ASSIGNMENTS">
+                        <label class="col-sm-2 col-form-label ta-right">Assignment Group</label>
+                        <div class="col-sm-10">                            
+                            <select id="ass-grp" class="form-select">
+                                <option selected>ASSIGNMENTS</option>
+                                <option value="1">QUIZ</option>
+                                <option value="2">PROJECT</option>
+                                <option value="3">Three</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="grade-diplay" class="col-sm-2 col-form-label ta-right">Dispplay Grade As</label>
+                        <label for="grade-display" class="col-sm-2 col-form-label ta-right">Dispplay Grade As</label>
                         <div class="col-sm-10">
-                            <input id="grade-display" type="text" class="form-control" value="PERCENTAGE Dropdown">
+                            <select id="grade-display" class="form-select">
+                                <option selected>PERCENTAGE</option>
+                                <option value="1">POINTS</option>
+                                <option value="2">PERCENTILE</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="grade-diplay" class="col-sm-2 col-form-label"></label>
+                        <label class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input class="form-check-input" type="checkbox" value="" id="include-in-final-grade">
                             <label class="form-check-label" for="include-in-final-grade">
@@ -146,7 +154,13 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label ta-right">Submission Type</label>
                         <div class="col-sm-10 sub-type-box">
-                            Dropdown
+                            
+                            <select class="form-select mb-2">
+                                <option selected>Online</option>
+                                <option value="1">POINTS</option>
+                                <option value="2">PERCENTILE</option>
+                            </select>
+
                             <h5>Online Entry Options</h5>
 
                             <div class="entry-type">
@@ -190,7 +204,13 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label ta-right">Assign</label>
                         <div class="col-sm-10 sub-type-box">
-                            Dropdown
+
+                            <select class="form-select mb-2" >
+                                <option selected>TA1</option>
+                                <option value="1">TA2</option>
+                                <option value="2">TA3</option>
+                            </select>
+
                             <h5>Assign To</h5>
 
                             <h5>Due</h5>
@@ -227,183 +247,5 @@
 
         </div>
     </div>
-
-    <!-- <table width="100%">
-        <tr>
-            <td valign="top">
-                <ul>
-                    <li><a href="../account-navigation.html">Account</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="../course-navigation.html">Courses</a></li>
-                    <li><a href="#">Inbox</a></li>
-                    <li><a href="#">Calender</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">Commons</a></li>
-                    <li><a href="#">Help</a></li>
-                </ul>
-            </td>
-
-            <td valign="top">
-                <ul>
-                    <li><a href="../home.html">Home</a></li>
-                    <li><a href="#">Modules</a></li>
-                    <li><a href="#">Piazza</a></li>
-                    <li><a href="#">Zoom Meetings</a></li>
-                    <li><a href="index.html">Assignments</a></li>
-                    <li><a href="#">Quizes</a></li>
-                    <li><a href="../grades.html">Grades</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">Panopto Video</a></li>
-                    <li><a href="#">Discussions</a></li>
-                    <li><a href="#">Announcements</a></li>
-                    <li><a href="#">Pages</a></li>
-                    <li><a href="#">Files</a></li>
-                    <li><a href="#">Rubrics</a></li>
-                    <li><a href="#">Outcomes</a></li>
-                    <li><a href="#">Collaboration</a></li>
-                    <li><a href="#">Syllabus</a></li>
-                    <li><a href="../settings/course-details.html">Settings</a></li>
-                </ul>
-            </td>
-
-            <td valign="top">
-                <select>
-                    <option>SpeedGrader</option>
-                </select>
-                <hr/>
-                <h1>Assignment Name</h1>
-                <input type="text" value="A1- ENV + HTML">
-
-                <br/>
-                <br/>
-
-                <textarea>
-                    This is the assignment description
-                </textarea>
-
-                <br/>
-                <br/>
-
-                Points
-                <br/>
-                <input type="text" value="100"/>
-
-                <br/>
-                <br/>
-
-                Assignment Group
-                <br/>
-                <select>
-                    <option>ASSIGNMENTS</option>
-                </select>
-
-                <br/>
-                <br/>
-
-                Display Grade As
-                <br/>
-                <select>
-                    <option>PERCENTAGE</option>
-                </select>
-
-                <br/>
-                <br/>
-
-                Submission Type
-                <br/>
-                <select>
-                    <option></option>
-                </select>
-                
-                <br/>
-                <br/>
-
-                Online Entry Options
-                <br>
-                <input type="checkbox">
-                <label>Text Entry</label>
-                <br>
-                <input type="checkbox">
-                <label>Website URL</label>
-                <br>
-                <input type="checkbox">
-                <label>Media Recordings</label>
-                <br>
-                <input type="checkbox">
-                <label>Student Annotations</label>
-                <br>
-                <input type="checkbox">
-                <label>File Upload</label>
-
-                <br/>
-                <br/>
-
-                Submission Attempts
-                <select>
-                    <option>Unlimited</option>
-                </select>
-
-                <br/>
-                <br/>
-
-                Plagiarism Review
-                <select>
-                    <option>None</option>
-                </select>
-
-                <br/>
-                <br/>
-
-                Group Assignment
-                <br>
-                <input type="checkbox">
-                <label>This is a graoup assignment</label>
-
-                <br/>
-                <br/>
-
-                Peer Reviews
-                <br>
-                <input type="checkbox">
-                <label>Require Peer Reviews</label>
-
-                <br>
-                <br>
-                Assign
-                <br>
-                Assign to
-                <br>
-                <input type="text" placeholder="everyone">
-
-                <br>
-                <br>
-
-                Due
-                <br>
-                <input type="date" value="today">
-
-                <br>
-                <br>
-
-                Available From
-                <br>
-                <input type="date" value="today">
-
-                <br>
-                <br>
-
-                Available Until
-                <br>
-                <input type="date" value="today">
-
-                <br>
-                <br>
-                <a href="index.html"><button>Cancel</button></a>
-                <a href="index.html"><button>Save</button></a>
-
-            </td>
-        </tr>
-    </table> -->
 </body>
 </html>
