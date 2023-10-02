@@ -10,27 +10,26 @@
     <title>Profile</title>
 </head>
 <body>
-    <div class="container main">
+    <div class="container main centered">
         <div class="sidebar">
             <ul>
                 <li>
                     <img src="../images/neu_logo.png" style="max-width: 60px;" alt="NEU-logo">
                 </li>
-                <li>
-                    
+                <li class="active">
                     <a 
                         href="../account-navigation.html">
-                        <i class="fa fa-user-circle" aria-hidden="true" style="color: #e2e7ee;"></i>
+                        <i class="fa fa-user-circle" aria-hidden="true" style="color: #9b9ea3;"></i>
                         Account
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../dashboard/index.html">
                         <i class="fa fa-tachometer" aria-hidden="true"></i>
                         Dashboard
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="../course-navigation.html">
                         <i class="fa fa-book" aria-hidden="true"></i>
                         Courses
@@ -62,7 +61,6 @@
         </div>
 
         <div class="row root">
-
             <div class="mt-3">
                 <i class="fa fa-bars bars color-red" aria-hidden="true"></i>
                 <h4>Supratik Chaudhuri's Profile</h4>
@@ -70,13 +68,13 @@
             
             <hr  class=" mt-4 mb-4"/>
 
-            <div class="col-2 nav-2">
+            <div class="d-none d-md-block nav-2">
                 <ul>
                     <li>
                         <a class ="color-red" href="#">Notifications</a>
                     </li>
-                    <li class="active" >
-                        <a href="#">Profile</a>
+                    <li class="active">
+                        <a href="index.html">Profile</a>
                     </li>
                     <li>
                         <a class ="color-red" href="#">Files</a>
@@ -106,17 +104,19 @@
             </div>
             
             <div class="col profile-details">
+                <a href="edit.html" class="float-end">
+                    <button class="btn btn-light kanbas-btn-gray btn-border">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        Edit Profile
+                    </button>
+                </a>
                 <div class="row">
-                    <div class="col-2 width-auto">
+                    <div class="col-md-12 col-lg-2 width-auto">
+                        
                         <i class="fa fa-user avatar" aria-hidden="true" style="color: #b2b4b7;"></i>
                     </div>
-                    <div class="col">
-                        <a href="edit.html" class="float-end">
-                            <button class="btn btn-light kanbas-btn-gray btn-border">
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
-                                Edit Profile
-                            </button>
-                        </a>
+                    <div class="col-md-12 col-lg-10">
+                        
         
                         <h2 style="font-weight: 300;">Supratik Chaudhuri</h2>
         
