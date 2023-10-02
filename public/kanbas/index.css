@@ -13,6 +13,11 @@ a {
 select{
     font-family: 'FontAwesome 5 Free', 'Helvetica';
 }
+.neu-logo {
+    /* remove inline style.... important not needed */
+    max-width: 60px !important;
+    padding: 8px 0 !important;
+}
 .centered {
     /* margin-left:auto !important; 
     margin-right:auto !important;
@@ -34,6 +39,10 @@ select{
 }
 .pos-absolute {
     position: absolute;
+}
+.nav-avatar {
+    color: #9b9ea3 !important; 
+    font-size: 32px !important;
 }
 .color-red {
     color: rgb(194, 35, 35) !important;

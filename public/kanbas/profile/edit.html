@@ -17,13 +17,12 @@
         <div class="sidebar">
             <ul>
                 <li>
-                    <img src="../images/neu_logo.png" style="max-width: 60px;" alt="NEU-logo">
+                    <img src="../images/neu_logo.png" style="max-width: 60px;" alt="NEU-logo" class="neu-logo">
                 </li>
-                <li>
-                    
+                <li class="active">
                     <a 
                         href="../account-navigation.html">
-                        <i class="fa fa-user-circle" aria-hidden="true" style="color: #e2e7ee;"></i>
+                        <i class="fa fa-user-circle nav-avatar" aria-hidden="true"></i>
                         Account
                     </a>
                 </li>
@@ -33,7 +32,7 @@
                         Dashboard
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="../course-navigation.html">
                         <i class="fa fa-book" aria-hidden="true"></i>
                         Courses
@@ -73,7 +72,7 @@
             
             <hr  class=" mt-4 mb-4"/>
 
-            <div class="col-2 nav-2">
+            <div class="d-none d-md-block nav-2">
                 <ul>
                     <li>
                         <a class ="color-red" href="#">Notifications</a>
@@ -109,18 +108,24 @@
             </div>
             
             <div class="col profile-details">
+                <a href="index.html" class="float-end">
+                    <button class="btn btn-light kanbas-btn-gray btn-border">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        Cancel Editing
+                    </button>
+                </a>
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-12">
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-md-12 col-lg-2 width-auto">
                                 <i class="fa fa-user avatar" aria-hidden="true" style="color: #b2b4b7; display: block;"></i>                            
                             </div>
 
-                            <div class="col-10">
-                                <label for="name-input" class=" fw-500">Name:*</label>
+                            <div class="col-md-12 col-lg-10">
+                                <label for="name-input" class=" fw-600">Name:*</label>
                                 <input type="text" class="form-control" id="name-input" value="Supratik Chaudhuri">
 
-                                <label for="name-input" class=" fw-500 mt-2">Pronouns:</label>
+                                <label for="name-input" class="fw-600 mt-2">Pronouns:</label>
                                 <select id="ass-grp" class="form-select">
                                     <option>he/him</option>
                                     <option>she/her</option>
@@ -129,7 +134,7 @@
                                 </select>
                                 
 
-                                <label for="title-input" class="mt-2 fw-500">Title</label>
+                                <label for="title-input" class="mt-2 fw-600">Title</label>
                                 <input type="text" class="form-control" id="title-input" value="Mr.">
 
                                 <h3 class="title mt-4">Contact</h3>
@@ -210,14 +215,15 @@
                 
                     </div>
 
-                    <div class="col">
+                    <!-- <div class="col">
                         <a href="index.html" class="float-end">
                             <button class="btn btn-light kanbas-btn-gray btn-border">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
                                 Cancel Editing
                             </button>
                         </a>
-                    </div>
+                    </div> -->
+                    
                 </div>
             </div>
 
