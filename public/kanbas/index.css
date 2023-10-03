@@ -19,11 +19,6 @@ select{
     max-width: 60px !important;
     padding: 8px 0 !important;
 }
-.centered {
-    /* margin-left:auto !important; 
-    margin-right:auto !important;
-    width: 100% !important; */
-}
 .main {
     margin: 0;
     padding: 0;
@@ -32,7 +27,28 @@ select{
 .root {
     width: 100%;
     margin-left: 95px;
-    padding-left: 20px; 
+    padding-left: 20px;
+}
+.nav-2 {
+    max-width: 200px;
+    padding: 0;
+    /* margin-left: 95px;
+    padding-left: 20px; */
+}
+.nav-2 li{
+    padding: 5px 0;
+}
+.nav-2 .active {
+    border-left: 2px solid black;
+}
+.nav-2 .active a {
+    color: black;
+    font-weight: 600;
+}
+.nav-2 a {
+    margin-left: 4px;
+    width: 100%;
+    display: block;
 }
 /* .main .nav {
     height: 100vh;
@@ -160,6 +176,8 @@ select{
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff;
 }
+
+
   
 
 
@@ -167,7 +185,7 @@ select{
 .sidebar {
     background-color: black;
     width: 95px;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -176,8 +194,13 @@ select{
     padding-top: 5px;
     font-weight: 200;
 }
-.side-bar ul {
+.sidebar ul {
     padding-left: 0 !important;
+}
+.sidebar li{
+    text-align: center;
+    cursor: pointer;
+    padding: 7px 0;
 }
 .sidebar i {
     color : red;
@@ -187,11 +210,6 @@ select{
 .sidebar a {
     color : white;
     font-size: 0.8rem;
-}
-.sidebar li{
-    text-align: center;
-    cursor: pointer;
-    padding: 7px 0;
 }
 .sidebar .active {
     background-color: white;
@@ -247,25 +265,7 @@ select{
 
 
 
-.nav-2 {
-    max-width: 200px;
-    padding: 0;
-}
-.nav-2 li{
-    padding: 5px 0;
-}
-.nav-2 .active {
-    border-left: 2px solid black;
-}
-.nav-2 .active a {
-    color: black;
-    font-weight: 600;
-}
-.nav-2 a {
-    margin-left: 4px;
-    width: 100%;
-    display: block;
-}
+
 .btn-border {
     border: 1px solid rgb(185, 181, 181);
 }
@@ -317,7 +317,9 @@ select{
 
 
 
-
-.dropdown-navbar {
-    z-index: 5;
+@media (max-width: 768px) {
+    .root {
+        margin: auto;
+        width: 100%;
+    }
 }
