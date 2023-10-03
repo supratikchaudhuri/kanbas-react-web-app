@@ -176,6 +176,9 @@ select{
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff;
 }
+.fit-content {
+    width: fit-content;
+}
 
 
   
@@ -315,9 +318,7 @@ select{
     cursor: pointer;
 }
 
-
-
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .root {
         margin: auto;
         width: 100%;

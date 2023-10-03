@@ -41,3 +41,14 @@
 .assign-footer p {
     margin-bottom: 0;
 }
+
+
+@media (max-width: 575px) {
+    .edit-ass-form > div > label {
+        text-align: left;
+    }
+
+    .edit-ass-form .sub-type-box {
+        width: 90%;
+    }
+}
