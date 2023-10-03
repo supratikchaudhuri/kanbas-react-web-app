@@ -48,6 +48,9 @@ select{
 .color-red {
     color: rgb(194, 35, 35) !important;
 }
+.color-white {
+    color: white !important;
+}
 .center-align {
     display: flex;
     justify-content: center;
@@ -160,7 +163,7 @@ select{
   
 
 
-/* Sidebar in black color */
+/* Sidebar for larger screens */
 .sidebar {
     background-color: black;
     width: 95px;
@@ -172,6 +175,9 @@ select{
     overflow-x: hidden;
     padding-top: 5px;
     font-weight: 200;
+}
+.side-bar ul {
+    padding-left: 0 !important;
 }
 .sidebar i {
     color : red;
@@ -193,6 +199,41 @@ select{
 .sidebar .active a {
     color: red;
 }
+
+/* Navbar for small screens */
+.xs-nav {
+    background-color: black;
+    padding: 0 !important;
+}
+.xs-nav div {
+    width: 100%;
+    height: 100%;
+}
+#kanbas-navigation ul, #secondary-navigation ul {
+    width: 100%;
+    list-style: none;
+    background-color: white;
+    margin-bottom: 0;
+    padding: 0 0 20px 0;
+}
+#kanbas-navigation ul a, #secondary-navigation ul a {
+    text-decoration: none;
+}
+#kanbas-navigation ul li, #secondary-navigation ul li {
+    display: inline-block;
+    padding: 10px 10px 0;
+    width: 100%;
+    text-align: left;
+}
+#kanbas-navigation i, #secondary-navigation i {
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+
+
+
+
 
 /* Screen title shared between multiple pages */
 .breadcrumb {
@@ -272,4 +313,11 @@ select{
     border: 1px solif gray;
     font-size: 20px;
     cursor: pointer;
+}
+
+
+
+
+.dropdown-navbar {
+    z-index: 5;
 }
