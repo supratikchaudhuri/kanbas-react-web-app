@@ -3,6 +3,7 @@
 }
 .new-module li {
     padding-left: 40px;
+    cursor: pointer;
 }
 .new-module li:first-child, .new-module .sub-heading {
     font-size: 1rem;
@@ -41,6 +42,9 @@
 }
 .button-bar button{
     margin: 5px 0;
+}
+.new-module a:hover {
+    text-decoration: underline;
 }
 
 
