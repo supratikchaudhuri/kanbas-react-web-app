@@ -21,11 +21,21 @@ function JavaScript() {
   return(
      <div>
         <h1>JavaScript</h1>
+
+        {/* 2.2.2 */}
         <VariablesAndConstants/>
+
+        {/* 2.2.3 */}
         <VariableTypes/>
+
+        {/* 2.2.4 */}
         <BooleanVariables/>
+
+        {/* 2.2.5 */}
         <IfElse/>
         <TernaryOperator/>
+
+        {/* 2.2.6 */}
         <ES5Functions/>
         <ES6ArrowFunctions/>
         <ImpliedReturns/>
@@ -48,7 +58,7 @@ function JavaScript() {
 
         {/* 2.2.12 */}
         <FunctionDestructing/>
-        
+
      </div>
   );
 }
