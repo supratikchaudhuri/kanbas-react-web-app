@@ -31,7 +31,7 @@ select{
     color: rgb(5, 150, 5) !important;  
 }
 .color-gray {
-    color: rgb(102, 98, 98) !important;
+    color: rgb(102, 98, 98);
 }
 .color-black {
     color: black !important;
