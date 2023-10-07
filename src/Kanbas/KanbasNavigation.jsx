@@ -5,30 +5,23 @@ import "./index.css";
 function KanbasNavigation() {
 	const links = [
 		{
-			name: 'Account', path: 'account/index.html', icon: 'fa fa-user-circle color-gray nav-avatar'
-		}, 
-		{
-			name: 'Dashboard', path: 'dashboard/index.html', icon: 'fa fa-tachometer'
+			name: 'Account', path: 'account/profile', icon: 'fa fa-user-circle color-gray nav-avatar'
 		}, {
-			name: 'Courses', path: 'courses/home.html', icon: 'fa fa-book'
-		},
-		{
-			name: 'Inbox', path: '/#', icon: 'fa fa-inbox'
-		},
-		{
-			name: 'Calender', path: '/#', icon: 'fa fa-calendar-days'
-		},
-		{
-			name: 'History', path: '/#', icon: 'fa-regular fa-clock'
-		},
-		{
-			name: 'Studio', path: '/#', icon: 'fa-solid fa-film'
-		},
-		{
-			name: 'Commons', path: '/#', icon: 'fa fa-terminal'
-		},
-		{
-			name: 'Help', path: '/#', icon: 'fa fa-question-circle'
+			name: 'Dashboard', path: 'dashboard', icon: 'fa fa-tachometer'
+		}, {
+			name: 'Courses', path: 'courses/home', icon: 'fa fa-book'
+		}, {
+			name: 'Inbox', path: 'inbox', icon: 'fa fa-inbox'
+		}, {
+			name: 'Calender', path: 'calender', icon: 'fa fa-calendar-days'
+		}, {
+			name: 'History', path: 'history', icon: 'fa-regular fa-clock'
+		}, {
+			name: 'Studio', path: 'studio', icon: 'fa-solid fa-film'
+		}, {
+			name: 'Commons', path: 'commons', icon: 'fa fa-terminal'
+		}, {
+			name: 'Help', path: 'help', icon: 'fa fa-question-circle'
 		}
 	]
 	const { pathname } = useLocation();
