@@ -9,7 +9,7 @@ function KanbasNavigation() {
 		}, {
 			name: 'Dashboard', path: 'dashboard', icon: 'fa fa-tachometer'
 		}, {
-			name: 'Courses', path: 'courses/home', icon: 'fa fa-book'
+			name: 'Courses', path: 'courses', icon: 'fa fa-book'
 		}, {
 			name: 'Inbox', path: 'inbox', icon: 'fa fa-inbox'
 		}, {
@@ -59,7 +59,7 @@ function KanbasNavigation() {
 	<div className="sidebar d-none d-md-block">
 		<ul>
 			<li>
-				<img src="../images/neu_logo.png" style={{"max-width": "60px"}} alt="NEU-logo" className="neu-logo"/>
+				<img src="../../public/images/neu_logo.png" style={{"max-width": "60px"}} alt="neu-logo" className="neu-logo"/>
 			</li>
 			{
 				links.map((link, index) => {
@@ -75,6 +75,10 @@ function KanbasNavigation() {
 			}
 		</ul>
   	</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 	</>
 )}
