@@ -32,8 +32,9 @@ function KanbasNavigation() {
             <i className="fa fa-bars" aria-hidden="true"></i>
         </button>
 
-        <button className="navbar-toggler d-lg-none color-white" data-toggle="collapse" data-target="#secondary-navigation">
+        <button className="navbar-toggler d-lg-none color-white pr-3" data-toggle="collapse" data-target="#secondary-navigation">
             <i className="fa fa-chevron-down" aria-hidden="true"></i>
+                 
         </button>
 
         <div className="collapse navbar-collapse dropdown-navbar" id="kanbas-navigation">

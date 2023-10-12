@@ -36,11 +36,11 @@ const Grades = () => {
                                 🔍  Search Students
                             </option>
                         </select>
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {/* <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a className="dropdown-item" href=".">Action</a>
                             <a className="dropdown-item" href=".">Another action</a>
                             <a className="dropdown-item" href=".">Something else here</a>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className="col">
@@ -50,11 +50,11 @@ const Grades = () => {
                                 🔍  Search Assignments
                             </option>
                         </select>
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {/* <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a className="dropdown-item" href=".">Action</a>
                             <a className="dropdown-item" href=".">Another action</a>
                             <a className="dropdown-item" href=".">Something else here</a>
-                        </div>
+                        </div> */}
                         </div>
                 </div>
             </div>
