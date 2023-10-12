@@ -8,7 +8,7 @@ const CourseNavigation = () => {
     {name: 'Modules', path: 'modules'},
     {name: 'Piazza', path: 'piazza'},
     {name: 'Zoom Meetings', path: 'zoom-meetings'},
-    {name: 'Assignments', path: 'assignments/index.html'},
+    {name: 'Assignments', path: 'assignments'},
     {name: 'Quizes', path: 'quizes'},
     {name: 'Grades', path: 'grades/grades.html'},
     {name: 'People', path: 'people'},

@@ -46,6 +46,9 @@
 .new-module a:hover {
     text-decoration: underline;
 }
+.breadcrumb > li + li:before {
+    content: ">" !important;
+}
 
 
 

@@ -3,7 +3,10 @@ import DB from '../../Database/index.js'
 
 const ModuleList = () => {
   const {courseId} = useParams();
-  const {moduels} = DB;
+  const {modules} = DB;
+
+  console.log(courseId);
+  console.log(modules);
 
   return (
     <div className="col-xs-12 col-md-8">
@@ -19,6 +22,18 @@ const ModuleList = () => {
         <hr className="mt-2 mb-2"/>
 
         <ul className="list-group new-module">
+            {
+                modules.filter((module) => module.course === courseId)
+                .map((module, index) => { return (
+                    <li className="list-group-item">
+                        {module.name}
+                        {module.description}
+                        <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                        <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    </li>
+                )})
+            }
+
             <li className="list-group-item list-group-item-secondary">
                 Week0- INTRO
                 <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
