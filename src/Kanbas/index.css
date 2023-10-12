@@ -3,7 +3,6 @@ body {
     line-height: 1.5;
     font-size: 1rem;
     font-family: Helvetica;
-    margin-bottom: 30px;
 }
 i {
     cursor: pointer;
@@ -133,10 +132,11 @@ select{
 .main {
     margin: 0 !important;
     padding: 0 !important;
-    width: 100vw !important;
+    /* width: 100vw !important; */
+    width: 100% !important;
 }
 .root {
-    width: 100%;
+    width: 100% !important;
     margin-left: 95px;
     padding-left: 20px;
 }
