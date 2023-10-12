@@ -6,6 +6,8 @@ import {Routes, Route, Navigate} from "react-router";
 import Labs from './labs';
 import HelloWorld from './labs/a3/HelloWorld';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   return (
     // <HashRouter>

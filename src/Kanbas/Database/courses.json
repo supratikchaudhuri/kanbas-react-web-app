@@ -17,6 +17,11 @@
       "name": "Spacecraft Design", "number": "RS4570", 
       "startDate": "2023-01-10", "endDate": "2023-05-15",
       "description": "This course covers the fundamentals of spacecraft design, including mission analysis, spacecraft subsystems, and spacecraft configuration. The course also covers the fundamentals of spacecraft dynamics, including orbital mechanics, attitude dynamics, and attitude control. The course concludes with a discussion of advanced spacecraft design concepts, including interplanetary trajectories, rendezvous and docking, and space debris mitigation."
+    },
+    { "_id": "WD101",
+      "name": "Web Development", "number": "WD1607", 
+      "startDate": "2023-01-10", "endDate": "2023-05-15",
+      "description": "This course gives students a solid foundation in web development. Students will learn the fundamentals of HTML, CSS, and JavaScript. Students will also learn how to use the Bootstrap framework to build responsive websites. The course concludes with a discussion of advanced web development concepts, including web application development, web security, and web accessibility."
     }
 ]
   

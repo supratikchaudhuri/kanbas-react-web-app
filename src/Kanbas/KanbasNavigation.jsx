@@ -1,7 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 
-import "./index.css";
-
 function KanbasNavigation() {
 	const links = [
 		{
@@ -59,7 +57,7 @@ function KanbasNavigation() {
 	<div className="sidebar d-none d-md-block">
 		<ul>
 			<li>
-				<img src="../../public/images/neu_logo.png" style={{"max-width": "60px"}} alt="neu-logo" className="neu-logo"/>
+				<img src={require('../images/neu_logo.png')} style={{"max-width": "60px"}} alt="neu-logo" className="neu-logo"/>
 			</li>
 			{
 				links.map((link, index) => {

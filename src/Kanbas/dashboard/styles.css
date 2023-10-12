@@ -1,5 +1,5 @@
 .dashboard {
-    margin-left: 120px;
+    margin-left: 115px;
 }
 .dashboard .random-div {
     margin-left: 15px;
@@ -33,11 +33,11 @@
     .main {
         margin-left: 15px;
         margin-right: 5px;
-    } 
+    }
     .dashboard {
         margin-left: 0;
     }
     .dashboard .course-card {
-        flex: 0 0 calc(max(100%/5, 250px));
+        flex: 0 0 calc(max(100%/5   , 250px));
     }  
 }
