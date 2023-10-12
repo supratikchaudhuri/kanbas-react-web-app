@@ -10,7 +10,7 @@ const CourseNavigation = () => {
     {name: 'Zoom Meetings', path: 'zoom-meetings'},
     {name: 'Assignments', path: 'assignments'},
     {name: 'Quizes', path: 'quizes'},
-    {name: 'Grades', path: 'grades/grades.html'},
+    {name: 'Grades', path: 'grades'},
     {name: 'People', path: 'people'},
     {name: 'Panopto Video', path: 'panopto-video'},
     {name: 'Discussions', path: 'discussions'},

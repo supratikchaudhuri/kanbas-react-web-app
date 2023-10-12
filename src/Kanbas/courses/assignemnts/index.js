@@ -20,7 +20,7 @@ function Assignments() {
             <div class="col">
                 <div class="float-end">
                     <button class="btn kanbas-btn-gray">+ Group</button>
-                    <button class="btn kanbas-red-btn mt-1">+ Assignment</button>
+                    <button class="btn kanbas-red-btn mt-1 ms-2">+ Assignment</button>
                 </div>
             </div>
         </div>

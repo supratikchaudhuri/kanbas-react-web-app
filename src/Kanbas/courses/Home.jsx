@@ -174,7 +174,7 @@ const Home = () => {
         <h6>Course Status</h6>
 
         <button class="btn kanbas-btn-gray"><i class="fa fa-ban" aria-hidden="true"></i>Unpublish</button>
-        <button class="btn custom-green"><i class="fa fa-check-circle" aria-hidden="true"></i>                    Publish</button>
+        <button class="btn custom-green ms-2"><i class="fa fa-check-circle" aria-hidden="true"></i>Publish</button>
 
         <ul>
             <li><a href="."><button class="btn kanbas-btn-gray">Import Existing Content</button></a></li>

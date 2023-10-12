@@ -8,6 +8,7 @@ import Home from "./Home.jsx";
 import Modules from "./modules/index.js";
 import Assignments from "./assignemnts/index.js";
 import AssignmentEditor from "./assignemnts/AssignmentEditor.jsx";
+import Grades from "./grades/index.js";
 
 function Courses() {
   const { courseId } = useParams();
@@ -39,7 +40,7 @@ function Courses() {
           <Route path="modules" element={<Modules/>}/>
           <Route path="assignments" element={<Assignments/>}/>
           <Route path="assignments/:assignmentId" element={<AssignmentEditor/>}/>
-          <Route path="grades" element={<h1>Grades</h1>}/>
+          <Route path="grades" element={<Grades/>}/>
 
         </Routes>
       </div>

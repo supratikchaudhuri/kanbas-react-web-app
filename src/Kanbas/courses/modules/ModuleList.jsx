@@ -12,11 +12,11 @@ const ModuleList = () => {
     <div className="col-xs-12 col-md-8">
         <div className="button-bar">
             <button className="btn kanbas-btn-gray">Collapse All</button>
-            <button className="btn kanbas-btn-gray">View Progress</button>
-            <select className="form-select color-gray inline width-auto">
+            <button className="btn kanbas-btn-gray ms-2">View Progress</button>
+            <select className="form-select color-gray inline width-auto ms-2">
                 <option selected>Publish All</option>
             </select>
-            <button className="btn kanbas-red-btn"> + Module</button>
+            <button className="btn kanbas-red-btn ms-2"> + Module</button>
         </div>
         
         <hr className="mt-2 mb-2"/>
