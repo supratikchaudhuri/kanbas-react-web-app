@@ -5,9 +5,6 @@ const ModuleList = () => {
   const {courseId} = useParams();
   const {modules} = DB;
 
-  console.log(courseId);
-  console.log(modules);
-
   return (
     <div className="col-xs-12 col-md-8">
         <div className="button-bar">
@@ -26,8 +23,7 @@ const ModuleList = () => {
                 modules.filter((module) => module.course === courseId)
                 .map((module, index) => { return (
                     <li className="list-group-item">
-                        {module.name}
-                        {module.description}
+                        {module.name} - {module.description}
                         <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
                         <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
                     </li>
@@ -121,72 +117,7 @@ const ModuleList = () => {
                 <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
             </li>
 
-            <li className="list-group-item sub-heading">
-                Learning Objectives
-                <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-            </li>
-            <li className="list-group-item">
-                Learning How to Create user interfaces with HTML
-                <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-            </li>
-            <li className="list-group-item">
-                Keep Working on Assignments
-                <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-            </li>
-            <li className="list-group-item">
-                Deploy the Asssignment to Netlify
-                <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-            </li>
-
-            <li className="list-group-item sub-heading">
-                Reading
-                <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-            </li>
-            <li className="list-group-item">
-                Full Stack Development Chapter-1
-                <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-            </li>
-            <li className="list-group-item">
-                Full Stack Development Chapter-2
-                <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-            </li>
-
-            <li className="list-group-item sub-heading">Slides
-                <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-
-            </li>
-            <li className="list-group-item">
-                <a href="https://github.com/supratikchaudhuri/kanbas-react-web-app" className="link color-red">
-                    <i className="fa fa-link" style={{color: "rgb(140, 138, 138)"}} aria-hidden="true"></i>
-                    Creating Web Forms
-                    <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                    <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li className="list-group-item">
-                <a href="https://github.com/supratikchaudhuri/kanbas-react-web-app" className="link color-red">
-                    <i className="fa fa-link" style={{color: "rgb(140, 138, 138)"}} aria-hidden="true"></i>
-                    Navigation With Anchors
-                    <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                    <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li className="list-group-item">
-                <a href="https://github.com/supratikchaudhuri/kanbas-react-web-app" className="link color-red">
-                    <i className="fa fa-link" style={{color: "rgb(140, 138, 138)"}} aria-hidden="true"></i>
-                    Embedding Contents with Iframes
-                    <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                    <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-                </a>
-            </li>
+            
         </ul>
     </div>
   )

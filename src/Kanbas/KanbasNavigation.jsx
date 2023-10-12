@@ -42,7 +42,7 @@ function KanbasNavigation() {
 				{
 					links.map((link, index) => {
 						return (
-							<li className={pathname.includes(link.path) ? 'active' : ''}>
+							<li key={index} className={pathname.includes(link.path) ? 'active' : ''}>
 								<Link className="color-red" to={link.path}>
 									<i className={`${link.icon} mr-3`} aria-hidden="true"></i>
 									{link.name}
@@ -74,11 +74,6 @@ function KanbasNavigation() {
 			}
 		</ul>
   	</div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 	</>
 )}
 
