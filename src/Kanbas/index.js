@@ -4,6 +4,7 @@ import Dashboard from "./dashboard";
 import Courses from "./courses";
 
 import "./index.css"
+import Account from "./Account";
 
 function Kanbas() {
   return (
@@ -13,6 +14,8 @@ function Kanbas() {
       <div class="container main">
         <Routes>
           <Route path="/" element={<Navigate to="dashboard"/>}/>
+
+          <Route path="account" element={<Account/>} />
 
           <Route path="dashboard" element={<Dashboard/>}/>
 

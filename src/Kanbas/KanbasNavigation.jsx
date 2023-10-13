@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 function KanbasNavigation() {
 	const links = [
 		{
-			name: 'Account', path: 'account/profile', icon: 'fa fa-user-circle color-gray nav-avatar'
+			name: 'Account', path: 'account', icon: 'fa fa-user-circle color-gray nav-avatar'
 		}, {
 			name: 'Dashboard', path: 'dashboard', icon: 'fa fa-tachometer'
 		}, {

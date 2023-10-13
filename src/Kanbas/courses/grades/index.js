@@ -18,7 +18,7 @@ const Grades = () => {
         
         <hr className="mt-5"/>
 
-        <form>
+        <form className="mb-3">
             <div className="row center-align">
                 <div className="col fw-600">
                     Student Names
@@ -37,11 +37,6 @@ const Grades = () => {
                                 🔍  Search Students
                             </option>
                         </select>
-                        {/* <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a className="dropdown-item" href=".">Action</a>
-                            <a className="dropdown-item" href=".">Another action</a>
-                            <a className="dropdown-item" href=".">Something else here</a>
-                        </div> */}
                     </div>
                 </div>
                 <div className="col">
@@ -51,18 +46,20 @@ const Grades = () => {
                                 🔍  Search Assignments
                             </option>
                         </select>
-                        {/* <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a className="dropdown-item" href=".">Action</a>
-                            <a className="dropdown-item" href=".">Another action</a>
-                            <a className="dropdown-item" href=".">Something else here</a>
-                        </div> */}
                         </div>
                 </div>
             </div>
             <button className="btn kanbas-btn-gray mt-2"><i className="fa fa-filter" aria-hidden="true"></i> Filter</button>
         </form>
 
-        <table className="mt-3 grades-table -2">
+    {
+        assignments.length === 0 
+        ? 
+        <div className="col width-100 alert alert-danger" role="alert">
+            No grades available
+        </div>
+        :
+        <table className="grades-table -2">
             <thead>
                 <tr>
                     <th className="student-name fw-600">Student Name</th>
@@ -95,7 +92,7 @@ const Grades = () => {
                 }
             </tbody>
         </table>
-
+    }
     </div>
   )
 }
