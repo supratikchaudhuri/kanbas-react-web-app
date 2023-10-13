@@ -13,6 +13,9 @@ import Grades from "./grades/index.js";
 function Courses() {
   const { courseId } = useParams();
   const course = db.courses.find((course) => course._id === courseId);
+  console.log(useParams());
+  const curPathSplit = useParams()['*'].split('/')
+  console.log(curPathSplit);
 
   return (
     <div className="main">
@@ -22,8 +25,18 @@ function Courses() {
           <i className="fa-solid fa-bars color-red"></i>
           <nav aria-label="breadcrumb" className="ms-4">
             <ol className="breadcrumb">
-              <li className="breadcrumb-item"><a className="hover-underline color-red" href=".">{course.name}</a></li>
-              <li className="breadcrumb-item color-black" aria-current="page">{useParams()['*']}</li>
+              <li className="breadcrumb-item"><a className="hover-underline color-red" href=".">{course._id} {course.name}</a></li>
+              {
+                curPathSplit.map((path, index) => 
+                <li className="breadcrumb-item">
+                  <a 
+                    className={index === curPathSplit.length - 1 ? "breadcrumb-item color-black" : "hover-underline color-red"} 
+                    href=".">
+                    {path}
+                  </a>
+                </li>
+                )
+              }
             </ol>
           </nav>
         </div>

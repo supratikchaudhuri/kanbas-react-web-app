@@ -146,8 +146,8 @@ const AssignmentEditor = () => {
             Notify users that this content has changed
         </label>
         <div className="float-end mb-5">
-            <a href="index.html"><button className="btn kanbas-btn-gray">Cancel</button></a>
-            <a href="index.html"><button className="btn kanbas-red-btn">Save</button></a>
+            <a href="../assignments"><button className="btn kanbas-btn-gray">Cancel</button></a>
+            <a href="../assignments"><button className="btn kanbas-red-btn ms-2">Save</button></a>
         </div>
     </div>
 )}

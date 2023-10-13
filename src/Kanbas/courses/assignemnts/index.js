@@ -12,6 +12,12 @@ function Assignments() {
   const courseAssignments = assignments.filter((assignment) => assignment.course === courseId);
 
   return (
+    courseAssignments.length === 0 
+    ?
+    <div className="col width-100 alert alert-danger height-100" role="alert">
+        No assignments created
+    </div>
+    :
     <div class="col width-100">
         <div class="row">
             <div class="col">

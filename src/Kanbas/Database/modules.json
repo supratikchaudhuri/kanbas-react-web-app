@@ -3,13 +3,56 @@
       "_id": "M101",
       "name": "Introduction to Rocket Propulsion",
       "description": "Basic principles of rocket propulsion and rocket engines.",
+      "contents": [
+        {
+          "heading": "Learning Objectives",
+          "topics": [
+            { 
+              "name": "How a Rocket Operates"
+            },
+            { 
+              "name": "Different type of fuel used in rockets"
+            },
+            { 
+              "name": "Fundamentals of Rocket Propulsion by D. P. Mishra",
+              "link": "https://ftp.idu.ac.id/wp-content/uploads/ebook/tdg/DESIGN%20SISTEM%20DAYA%20GERAK/Fundamentals%20of%20Rocket%20Propulsion.pdf"
+            }
+          ]
+        }
+      ],
       "course": "RS101"
     },
     {
       "_id": "M102",
       "name": "Fuel and Combustion",
       "description": "Understanding rocket fuel, combustion processes, and efficiency.",
-      "course": "RS101"
+      "course": "RS101",
+      "contents": [
+        {
+          "heading": "Learning Objectives",
+          "topics": [
+            { 
+              "name": "Composition of Rocket Fuel"
+            },
+            { 
+              "name": "Chemical Structure of Hydrazine"
+            },
+            {
+              "name": "Analysis of Rocket Fuels",
+              "link": "https://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID3763002_code4337744.pdf?abstractid=3763002"
+            }
+          ]
+        },
+        {
+          "heading": "Slides",
+          "topics": [
+            {
+              "name": "Rocket Propellent",
+              "link": "https://www.slideshare.net/dhirendrasingh38/rocket-propellent-ppt"
+            }
+          ]
+        }
+      ]
     },
     {
       "_id": "M103",
