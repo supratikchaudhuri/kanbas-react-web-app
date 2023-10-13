@@ -3,8 +3,8 @@ import "../index.css"
 import "./styles.css"
 import AccountNavigation from './AccountNavigation'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import Profile from './Profile'
-import EditProfile from './EditProfile'
+import Profile from './profile/Profile'
+import EditProfile from "./profile/EditProfile"
 
 const Account = () => {
     return (
