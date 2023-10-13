@@ -3,8 +3,9 @@ import DB from "../../Database"
 import "./styles.css"
 
 const Grades = () => {
-  const { courseId } = useParams();
-  const { grades } = DB.grades;
+    const { courseId } = useParams();
+    const assignments = DB.assignments.filter(assignment => assignment.course === courseId)
+    const enrollments = DB.enrollments.filter(enrollment => enrollment.course === courseId)
 
   return (
     <div className="col width-auto">
@@ -58,8 +59,6 @@ const Grades = () => {
                         </div>
                 </div>
             </div>
-
-            
             <button className="btn kanbas-btn-gray mt-2"><i className="fa fa-filter" aria-hidden="true"></i> Filter</button>
         </form>
 
@@ -67,45 +66,34 @@ const Grades = () => {
             <thead>
                 <tr>
                     <th className="student-name fw-600">Student Name</th>
-                    <th>A1 Setup <br/>Out of 100</th>
-                    <th>A2 HTML <br/>Out of 100</th>
-                    <th>A3 CSS <br/>Out of 100</th>
-                    <th>A4 Bootstrap <br/>Out of 100</th>
+                    {
+                        assignments.map(assignment => (
+                            <th>{assignment.title} <br/>Out of 100</th>
+                        ))
+                    }
                 </tr>
             </thead>
         
-            
-            <tr >
-                <td valign="top" className="student-name color-red">Alice Wolderland</td>
-                <td valign="top">98</td>
-                <td valign="top"><input type="number" className="form-control tl-center" value="89"/></td>
-                <td valign="top">100</td>
-                <td valign="top">95</td>
-            </tr>
-
-            <tr >
-                <td valign="top" className="student-name color-red">John Doe</td>
-                <td valign="top">100</td>
-                <td valign="top">97</td>
-                <td valign="top">100</td>
-                <td valign="top"><input type="number" className="form-control tl-center" value="97"/></td>
-            </tr>
-
-            <tr >
-                <td valign="top" className="student-name color-red">Sam Wilson</td>
-                <td valign="top"><input type="number" className="form-control tl-center" value="98"/></td>
-                <td valign="top">100</td>
-                <td valign="top">100</td>
-                <td valign="top">99</td>
-            </tr>
-
-            <tr>
-                <td valign="top" className="student-name color-red">Thomas D</td>
-                <td valign="top">89</td>
-                <td valign="top"><input type="number" className="form-control tl-center" value="99"/></td>
-                <td valign="top">92</td>
-                <td valign="top">93</td>
-            </tr>
+            <tbody>
+                {
+                    enrollments.map(enrollment => {
+                        const user = DB.users.find(user => user._id === enrollment.user)
+                        return (
+                            <tr >
+                                <td valign="top" className="student-name color-red">{user.firstName} {user.lastName}</td>
+                                {
+                                    assignments.map(assignment => {
+                                        const grade = DB.grades.find((grade) => grade.student === user._id && grade.assignment === assignment._id);
+                                        return (
+                                            <td valign="top">{grade?.grade || "-"}</td>
+                                        )
+                                    })
+                                }
+                            </tr>
+                        )
+                    })
+                }
+            </tbody>
         </table>
 
     </div>

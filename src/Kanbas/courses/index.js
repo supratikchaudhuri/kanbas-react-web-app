@@ -13,9 +13,7 @@ import Grades from "./grades/index.js";
 function Courses() {
   const { courseId } = useParams();
   const course = db.courses.find((course) => course._id === courseId);
-  console.log(useParams());
   const curPathSplit = useParams()['*'].split('/')
-  console.log(curPathSplit);
 
   return (
     <div className="main">

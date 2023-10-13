@@ -5,7 +5,6 @@ import DB from '../Database/index.js'
 
 function Dashboard() {
     const {courses} = DB;
-    console.log(courses);
 
   const redirect = (courseId) => {
     return () => {
