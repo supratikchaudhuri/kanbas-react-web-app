@@ -20,11 +20,10 @@ function Courses() {
 
         <div className="breadcrumb">
           <i className="fa-solid fa-bars color-red"></i>
-          {/* <nav style={{"--bs-breadcrumb-divider": '>', color: "black"}} aria-label="breadcrumb" className="ms-4"> */}
           <nav aria-label="breadcrumb" className="ms-4">
             <ol className="breadcrumb">
               <li className="breadcrumb-item"><a className="hover-underline color-red" href=".">{course.name}</a></li>
-              <li className="breadcrumb-item color-black" aria-current="page">Home</li>
+              <li className="breadcrumb-item color-black" aria-current="page">{useParams()['*']}</li>
             </ol>
           </nav>
         </div>

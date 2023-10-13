@@ -49,8 +49,9 @@
 .breadcrumb > li + li:before {
     content: ">" !important;
 }
-
-
+.breadcrumb > li {
+    text-transform: capitalize;
+}
 
 @media (max-width: 1200px) {
     .extra {

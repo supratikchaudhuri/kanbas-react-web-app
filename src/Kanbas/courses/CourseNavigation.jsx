@@ -21,7 +21,7 @@ const CourseNavigation = () => {
     {name: 'Outcomes', path: 'outcomes'},
     {name: 'Collaboration', path: 'collaboration'},
     {name: 'Syllabus', path: 'syllabus'},
-    {name: 'Settings', path: 'settings/course-details.html'},
+    {name: 'Settings', path: 'settings'},
   ]
 
   return (
@@ -31,7 +31,7 @@ const CourseNavigation = () => {
             {
               links.map((link, index) => {
                 return (
-                  <li className={pathname.includes(link.path) ? 'active' : ''}>
+                  <li key={index} className={pathname.includes(link.path) ? 'active' : ''}>
                     <Link className={pathname.includes(link.path) ? '' : 'color-red'} to={link.path}>
                       {link.name}
                     </Link>
