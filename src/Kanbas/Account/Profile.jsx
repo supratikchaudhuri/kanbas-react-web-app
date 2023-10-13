@@ -1,7 +1,7 @@
 const Profile = () => {
     return (
         <div className="col profile-details">
-            <a href="edit.html" className="float-end">
+            <a href="edit-profile" className="float-end">
                 <button className="btn btn-light kanbas-btn-gray btn-border">
                     <i className="fa fa-pencil" aria-hidden="true"></i>
                     Edit Profile

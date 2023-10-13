@@ -100,7 +100,7 @@ const EditProfile = () => {
                                     <button type="button" className="btn btn-light btn-border">Cancel</button>                  
                                 </a>
                                 <a href="index.html">
-                                    <button type="button" className="btn btn-danger btn-border">Save Profile</button>
+                                    <button type="button" className="btn btn-danger btn-border ms-2">Save Profile</button>
                                 </a>
                             </div>
                         </div>
