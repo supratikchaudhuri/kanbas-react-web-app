@@ -22,6 +22,14 @@
       "name": "Web Development", "number": "WD1607", 
       "startDate": "2023-01-10", "endDate": "2023-05-15",
       "description": "This course gives students a solid foundation in web development. Students will learn the fundamentals of HTML, CSS, and JavaScript. Students will also learn how to use the Bootstrap framework to build responsive websites. The course concludes with a discussion of advanced web development concepts, including web application development, web security, and web accessibility."
+    },
+    {
+      "_id": "CG204",
+      "name": "Blockchain Technologies", "number": "CG2944",
+      "startDate": "2023-01-10", 
+      "endDate": "2023-05-15",
+      "description": "This course gives an overview of a decentralized, distributed and public digital ledger that is used to record transactions across many computers so that the record cannot be altered retroactively without the alteration of all subsequent blocks and the consensus of the network.",
+      "image": "blockchain-technologies.jpeg"
     }
 ]
   

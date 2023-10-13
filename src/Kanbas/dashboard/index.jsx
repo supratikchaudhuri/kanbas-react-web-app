@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styles.css"
 
-import data from '../Database/index.js'
+import DB from '../Database/index.js'
 
 function Dashboard() {
-    const {courses} = data;
+    const {courses} = DB;
     console.log(courses);
 
   const redirect = (courseId) => {
@@ -20,7 +20,7 @@ function Dashboard() {
       <hr/>
 
       <div className="random-div"> 
-          <h2 className="sub-heading mb-3">Published Courses (10)</h2>
+          <h2 className="sub-heading mb-3">Published Courses ({courses.length})</h2>
           <hr/>
       </div>
       <div className="d-flex justify-content-start flex-wrap card-container">
