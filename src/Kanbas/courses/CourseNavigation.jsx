@@ -26,21 +26,21 @@ const CourseNavigation = () => {
 
   return (
     <>
-      <div className="d-none d-md-block nav-2">
-          <ul>
-            {
-              links.map((link, index) => {
-                return (
-                  <li key={index} className={pathname.includes(link.path) ? 'active' : ''}>
-                    <Link className={pathname.includes(link.path) ? '' : 'color-red'} to={link.path}>
-                      {link.name}
-                    </Link>
-                  </li>
-                )
-              })
-            }
-          </ul>
-      </div>
+        <div className="d-none d-md-block nav-2">
+                <ul>
+                    {
+                    links.map((link, index) => {
+                        return (
+                        <li key={index} className={pathname.includes(link.path) ? 'active' : ''}>
+                            <Link className={pathname.includes(link.path) ? '' : 'color-red'} to={link.path}>
+                            {link.name}
+                            </Link>
+                        </li>
+                        )
+                    })
+                    }
+                </ul>
+        </div>
     </>
   )
 }
