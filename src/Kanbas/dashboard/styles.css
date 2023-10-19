@@ -13,6 +13,10 @@
     margin-left: 30px;
     margin-bottom: 30px;
 }
+.card-img-top {
+    max-height: 180px;
+    max-width: 270px;
+}
 .dashboard .card-title {
     color : rgb(12, 117, 245);
     font-size: 16px;

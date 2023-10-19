@@ -16,7 +16,8 @@
     { "_id": "RS103",
       "name": "Spacecraft Design", "number": "RS4570", 
       "startDate": "2023-01-10", "endDate": "2023-05-15",
-      "description": "This course covers the fundamentals of spacecraft design, including mission analysis, spacecraft subsystems, and spacecraft configuration. The course also covers the fundamentals of spacecraft dynamics, including orbital mechanics, attitude dynamics, and attitude control. The course concludes with a discussion of advanced spacecraft design concepts, including interplanetary trajectories, rendezvous and docking, and space debris mitigation."
+      "description": "This course covers the fundamentals of spacecraft design, including mission analysis, spacecraft subsystems, and spacecraft configuration. The course also covers the fundamentals of spacecraft dynamics, including orbital mechanics, attitude dynamics, and attitude control. The course concludes with a discussion of advanced spacecraft design concepts, including interplanetary trajectories, rendezvous and docking, and space debris mitigation.",
+      "image": "spacecraft-design.avif"
     },
     { "_id": "WD101",
       "name": "Web Development", "number": "WD1607", 
