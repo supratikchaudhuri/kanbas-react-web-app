@@ -14,7 +14,7 @@ function Courses() {
   const { courseId } = useParams();
   const course = db.courses.find((course) => course._id === courseId);
   const curPathSplit = useParams()['*'].split('/')
-
+  console.log(curPathSplit);
   return (
     <div className="main">
       <div className="row root">
@@ -37,6 +37,11 @@ function Courses() {
               }
             </ol>
           </nav>
+          {(curPathSplit[0] === "modules" || curPathSplit[0] === "home") 
+            && <button className="btn kanbas-btn-gray ms-auto">
+                <i class="fa-solid fa-glasses"></i> Student View
+              </button>
+          }
         </div>
             
         <hr/>

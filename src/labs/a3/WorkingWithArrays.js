@@ -1,3 +1,12 @@
+import AddingAndRemovingDataToFromArrays from "./AddingAndRemovingDataToFromArrays";
+import ArrayIndexAndLength from "./ArrayIndexAndLength";
+import ForLoops from "./ForLoops";
+import MapFunction from "./MapFunction";
+import JsonStringify from "./JsonStringify";
+import FindFunction from "./FindFunction";
+import FindIndexFunction from "./FindIndexFunction";
+import FilterFunction from "./FilterFunction";
+
 function WorkingWithArrays() {
 
   console.log("Working With Array");
@@ -22,6 +31,18 @@ function WorkingWithArrays() {
   return (
     <div>
       <h2>Working With Arrays</h2>
+      <div>numberArray1: {numberArray1}</div>
+      <div>stringArray1: {stringArray1}</div>
+      <div>variableArray1: {variableArray1}</div>
+
+      <ArrayIndexAndLength/>
+      <AddingAndRemovingDataToFromArrays/>
+      <ForLoops/>
+      <MapFunction/>
+      <JsonStringify/>
+      <FindFunction/>
+      <FindIndexFunction/>
+      <FilterFunction/>
     </div>
   )
 }

@@ -91,12 +91,12 @@ select{
     height: 100vh;
 }
 .kanbas-btn-gray {
-    color: rgb(102, 98, 98);
+    color: rgb(52, 50, 50);
     background-color: rgb(241, 240, 240);
     border: 1px solid rgb(185, 181, 181);
 }
 .kanbas-btn-gray:hover {
-    color: rgb(102, 98, 98);
+    color: rgb(52, 50, 50);
     background-color: rgb(225, 225, 225);
 }
 .kanbas-red-btn {
