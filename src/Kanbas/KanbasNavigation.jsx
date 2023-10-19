@@ -156,7 +156,7 @@ function KanbasNavigation() {
 	<div className="sidebar d-none d-md-block">
 		<ul>
 			<li>
-				<img src={require('../images/neu_logo.png')} style={{"max-width": "60px"}} alt="neu-logo" className="neu-logo"/>
+				<img src={require('../images/neu-logo-white.png')} style={{"max-width": "60px", "transform": "scale(1.4)"}} alt="neu-logo" className="neu-logo"/>
 			</li>
 			{
 				links.map((link, index) => {
