@@ -7,7 +7,11 @@
     { "_id": "A203", "title": "Heating Analysis", "course": "RS102" },
     { "_id": "A301", "title": "Structural Design Task", "course": "RS103" },
     { "_id": "A302", "title": "Orbital Calculations", "course": "RS103" },
-    { "_id": "A303", "title": "Systems Engineering Exam", "course": "RS103" }
+    { "_id": "A303", "title": "Systems Engineering Exam", "course": "RS103" },
+    { "_id": "A1", "title": "HTML", "course": "WD101" },
+    { "_id": "A2", "title": "CSS", "course": "WD101" },
+    { "_id": "A3", "title": "Bootstrap", "course": "WD101" },
+    { "_id": "A4", "title": "React + JS", "course": "WD101" }
   ]
   
   

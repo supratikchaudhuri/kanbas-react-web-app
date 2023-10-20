@@ -95,6 +95,44 @@
     "name": "Spacecraft Systems Engineering",
     "description": "Overview of spacecraft systems and subsystems engineering.",
     "course": "RS103"
+  },
+  {
+    "_id": "M0",
+    "name": "Welcome to the course",
+    "contents": [
+      {
+        "heading": "References",
+        "topics": [
+          { 
+            "name": "YouTube (Lecture Recordings)",
+            "link": "https://www.youtube.com/@WebDevTV"
+          },
+          { 
+            "name": "Twitter/X (Lecture Recordings)",
+            "link": "https://twitter.com/jannunzi"
+          }
+        ]
+      }
+    ],
+    "course": "WD101"
+  },
+  {
+    "_id": "M1",
+    "name": "Introduction to HTML",
+    "description": "Undestanding the purpose and use of HTML/HTMX",
+    "course": "WD101"
+  },
+  {
+    "_id": "M2",
+    "name": "Styling with CSS/SCSS + Bootstrap",
+    "description": "Developing user-friendly UI components and responsive website for variety to client devices",
+    "course": "WD101"
+  },
+  {
+    "_id": "M3",
+    "name": "Javascript + REACT",
+    "description": "Adding dynamic capabilities to the website",
+    "course": "WD101"
   }
 ]
   
