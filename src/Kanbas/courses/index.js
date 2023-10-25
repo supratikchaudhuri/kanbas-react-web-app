@@ -16,6 +16,7 @@ function Courses() {
   const curPathSplit = useParams()['*'].split('/')
   console.log(curPathSplit);
   return (
+    !course ? <Navigate to="../dashboard"/> :
     <div className="main">
       <div className="row root">
 

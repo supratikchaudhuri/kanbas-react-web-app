@@ -1,5 +1,5 @@
 import Kanbas from './Kanbas';
-import {HashRouter, BrowserRouter} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 import {Routes, Route, Navigate} from "react-router";
 
 
