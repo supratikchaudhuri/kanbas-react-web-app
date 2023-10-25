@@ -1,12 +1,31 @@
 import { useParams } from 'react-router';
 import DB from '../../Database/index.js'
+import { useState } from 'react';
+import ModulesForm from './ModulesForm.jsx';
 
 const ModuleList = () => {
     const {courseId} = useParams();
     const {modules} = DB;
-    const courseModules = modules.filter((module) => module.course === courseId);
-    console.log(courseModules);
-  return (
+    const [courseModules, setCourseModules] = useState(modules.filter((module) => module.course === courseId));
+    const newModule = {
+        name: "New Module",
+        description: "New Description"
+    }
+    const [module, setModule] = useState(newModule);
+    const [hiddenForm, setHiddenForm] = useState(true);
+    const [formType, setFormType] = useState(null);
+
+    const deleteModule = (moduleId) => {
+        setCourseModules(courseModules.filter((module) => module._id !== moduleId));
+    }
+
+    const displayForm = (e, type) => {
+        e.preventDefault()
+        setFormType(type)
+        setHiddenForm(!hiddenForm)
+    }
+
+return (
     courseModules.length === 0 ? 
     <div className="col-xs-12 col-md-8 alert alert-danger height-100" role="alert">
         No modules published for this course
@@ -19,8 +38,23 @@ const ModuleList = () => {
             <select className="form-select color-gray inline width-auto ms-2">
                 <option selected>Publish All</option>
             </select>
-            <button className="btn kanbas-red-btn ms-2"> + Module</button>
+            <button className="btn kanbas-red-btn ms-2"
+                onClick={(e) => {setModule(newModule); displayForm(e, "ADD")}}
+            > + Module</button>
         </div>
+
+        { !hiddenForm 
+            && 
+            <ModulesForm 
+                module={module}
+                setModule={setModule}
+                courseModules={courseModules} 
+                setCourseModules={setCourseModules}
+                hiddenForm={hiddenForm}
+                setHiddenForm={setHiddenForm}
+                formType={formType}
+            /> 
+        }
         
         <hr className="mt-2 mb-2"/>
         
@@ -28,11 +62,25 @@ const ModuleList = () => {
             courseModules.map((module, index) => { return (
                 <ul key={index} className="list-group new-module">
                 <li className="list-group-item list-group-item-secondary">
+                    
                     {module.name} - {module.description}
-                    <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                    <i className="fa fa-plus float-end ms-3" aria-hidden="true"></i>
-                    <i className="fa fa-caret-down float-end ms-1" aria-hidden="true"></i>
-                    <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                    <div className='d-flex flex-row justify-content-between'>
+                        <i className="fa fa-ellipsis-v float-end color-gray" aria-hidden="true"></i>
+                        <i className="fa fa-plus float-end" aria-hidden="true"></i>
+                        <i className="fa fa-caret-down float-end" aria-hidden="true"></i>
+                        <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                        <i className="fa-solid fa-edit footer-item color-green"
+                            onClick={(e) => {
+                                e.stopPropagation(); 
+                                setModule(module);
+                                displayForm(e, "EDIT");
+                            }}
+                        ></i>
+                        <i className="fa-solid fa-trash footer-item color-red"
+                            onClick={(e) => {e.stopPropagation(); deleteModule(module._id)}}
+                        ></i> 
+                    </div>
+                    
                 </li>
 
                 {

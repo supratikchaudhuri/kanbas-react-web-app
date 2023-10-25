@@ -11,7 +11,7 @@ function Dashboard() {
 		startDate: "2023-09-10", endDate: "2023-12-15",
 		description: "New Description"
 	}
-    const [courses, setCourses] = useState(DB.courses)
+  const [courses, setCourses] = useState(DB.courses)
 	const [course, setCourse] = useState(defaultCourse)
 	const [hiddenForm, setHiddenForm] = useState(true)
 	const [formType, setFormType] = useState(null)
@@ -23,13 +23,13 @@ function Dashboard() {
   }
 
   const displayForm = (e, type) => {
-	e.preventDefault()
-	setFormType(type)
-	setHiddenForm(!hiddenForm)
+    e.preventDefault()
+    setFormType(type)
+    setHiddenForm(!hiddenForm)
   }
 
   const deleteCourse = (courseId) => {
-	setCourses(courses.filter((course) => course._id !== courseId));
+	  setCourses(courses.filter((course) => course._id !== courseId));
   }
 
   return (
@@ -53,11 +53,13 @@ function Dashboard() {
       <h1 className="heading">Dashboard</h1>
       <hr/>
 
-      <div className="random-div "> 
-          <h2 className="sub-heading mb-3 inline">Published Courses ({courses.length})</h2>
-		  <button className="btn btn-primary ms-auto" onClick={e => {setCourse(defaultCourse); displayForm(e, "ADD")}}>Add</button>
-          <hr/>
+      <div className="random-div d-flex flex-row"> 
+          <h2 className="sub-heading mb-0 mt-0">Published Courses ({courses.length})</h2>
+		      <button className="btn btn-primary ms-auto" onClick={e => {setCourse(defaultCourse); displayForm(e, "ADD")}}>Add</button>
       </div>
+      
+      <hr/>
+
       <div className="d-flex justify-content-start flex-wrap card-container">
           {
               courses.map((course, index) => {
