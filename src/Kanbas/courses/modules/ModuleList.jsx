@@ -62,23 +62,27 @@ return (
             courseModules.map((module, index) => { return (
                 <ul key={index} className="list-group new-module">
                 <li className="list-group-item list-group-item-secondary">
-                    
-                    {module.name} - {module.description}
-                    <div className='d-flex flex-row justify-content-between'>
-                        <i className="fa fa-ellipsis-v float-end color-gray" aria-hidden="true"></i>
-                        <i className="fa fa-plus float-end" aria-hidden="true"></i>
-                        <i className="fa fa-caret-down float-end" aria-hidden="true"></i>
-                        <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-                        <i className="fa-solid fa-edit footer-item color-green"
-                            onClick={(e) => {
-                                e.stopPropagation(); 
-                                setModule(module);
-                                displayForm(e, "EDIT");
-                            }}
-                        ></i>
-                        <i className="fa-solid fa-trash footer-item color-red"
-                            onClick={(e) => {e.stopPropagation(); deleteModule(module._id)}}
-                        ></i> 
+
+                    <div className="d-flex flex-row">
+                        <div>
+                            {module.name} - {module.description}
+                        </div>
+                        <div className='d-flex flex-row ms-auto'>
+                            <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
+                            <i className="fa fa-caret-down float-end ms-1" aria-hidden="true"></i>
+                            <i className="fa fa-plus float-end ms-2" aria-hidden="true"></i>
+                            <i className="fa-solid fa-edit footer-item color-green ms-2"
+                                onClick={(e) => {
+                                    e.stopPropagation(); 
+                                    setModule(module);
+                                    displayForm(e, "EDIT");
+                                }}
+                            ></i>
+                            <i className="fa-solid fa-trash footer-item color-red ms-2"
+                                onClick={(e) => {e.stopPropagation(); deleteModule(module._id)}}
+                            ></i> 
+                            <i className="fa fa-ellipsis-v float-end color-gray ms-2" aria-hidden="true"></i>
+                        </div>
                     </div>
                     
                 </li>
