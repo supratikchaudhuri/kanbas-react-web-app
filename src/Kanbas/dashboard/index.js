@@ -79,7 +79,7 @@ function Dashboard({courses, setCourses}) {
                                         }}
                                     ></i>
                                     <i className="fa-solid fa-trash footer-item color-red"
-                                        onClick={(e) => {e.stopPropagation(); deleteCourse(course._id)}}
+                                        onClick={(e) => {e.preventDefault(); deleteCourse(course._id)}}
                                     ></i>
                                 </div>
                         </div>
