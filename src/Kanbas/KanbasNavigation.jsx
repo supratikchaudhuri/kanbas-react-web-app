@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/js/dist/dropdown.js"
 
 function KanbasNavigation() {
+  const { pathname } = useLocation();
+
 	const links = [{
 			name: 'Account', path: 'account', icon: 'fa fa-user-circle color-gray nav-avatar'
 		}, {
@@ -23,29 +25,6 @@ function KanbasNavigation() {
 			name: 'Help', path: 'help', icon: 'fa fa-question-circle'
 		}
 	]
-
-  const courseLinks = [{
-            name: 'Home', path: 'account', icon: 'fa fa-user-circle color-gray nav-avatar'
-        }, {
-            name: 'Modules', path: 'dashboard', icon: 'fa fa-tachometer'
-        }, {
-            name: 'Piazza', path: 'courses', icon: 'fa fa-book'
-        }, {
-            name: 'Inbox', path: 'inbox', icon: 'fa fa-inbox'
-        }, {
-            name: 'Calender', path: 'calender', icon: 'fa fa-calendar-days'
-        }, {
-            name: 'History', path: 'history', icon: 'fa-regular fa-clock'
-        }, {
-            name: 'Studio', path: 'studio', icon: 'fa-solid fa-film'
-        }, {
-            name: 'Commons', path: 'commons', icon: 'fa fa-terminal'
-        }, {
-            name: 'Help', path: 'help', icon: 'fa fa-question-circle'
-        }
-    ]
-
-	const { pathname } = useLocation();
 
 	return (
 	<>
@@ -119,7 +98,7 @@ function KanbasNavigation() {
                     <li key={index} className={pathname.includes(link.path) ? 'active' : ''}>
                         <Link className="color-red" to={link.path}>
                         <i className={`${link.icon} mr-3`} aria-hidden="true"></i>
-                        {link.name}
+                          {link.name}
                         </Link>
                     </li>
                     )
@@ -158,7 +137,7 @@ function KanbasNavigation() {
 				<img src={require('../images/neu-logo-white.png')} style={{"max-width": "60px", "transform": "scale(1.5)"}} alt="neu-logo" className="neu-logo"/>
 			</li>
 			{
-				links.map((link, index) => {
+				links.map((link) => {
 					return (
 						<li className={pathname.includes(link.path) ? 'active' : ''}>
 							<Link to={link.path}>
