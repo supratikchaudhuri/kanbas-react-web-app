@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/js/dist/dropdown.js"
 
-
 function KanbasNavigation() {
 	const links = [{
 			name: 'Account', path: 'account', icon: 'fa fa-user-circle color-gray nav-avatar'

@@ -1,4 +1,3 @@
-import db from "../Database/index.js";
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
 
 import "./styles.css"
@@ -10,13 +9,13 @@ import Assignments from "./assignemnts/index.js";
 import AssignmentEditor from "./assignemnts/AssignmentEditor.jsx";
 import Grades from "./grades/index.js";
 
-function Courses() {
+function Courses({courses}) {
   const { courseId } = useParams();
-  const course = db.courses.find((course) => course._id === courseId);
+
+  const course = courses.find((course) => course._id === courseId);
   const curPathSplit = useParams()['*'].split('/')
   
   return (
-    !course ? <Navigate to="../dashboard"/> :
     <div className="main">
       <div className="row root">
 
@@ -24,7 +23,7 @@ function Courses() {
           <i className="fa-solid fa-bars color-red"></i>
           <nav aria-label="breadcrumb" className="ms-4">
             <ol className="breadcrumb">
-              <li className="breadcrumb-item"><a className="hover-underline color-red" href=".">{course._id} {course.name}</a></li>
+              <li className="breadcrumb-item"><a className="hover-underline color-red" href=".">{course?._id} {course?.name}</a></li>
               {
                 curPathSplit.map((path, index) => 
                 <li className="breadcrumb-item">
