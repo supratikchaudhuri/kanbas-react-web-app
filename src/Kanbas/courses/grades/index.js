@@ -1,11 +1,11 @@
 import { useParams } from "react-router"
-import DB from "../../Database"
+import db from "../../Database"
 import "./styles.css"
 
 const Grades = () => {
     const { courseId } = useParams();
-    const assignments = DB.assignments.filter(assignment => assignment.course === courseId)
-    const enrollments = DB.enrollments.filter(enrollment => enrollment.course === courseId)
+    const assignments = db.assignments.filter(assignment => assignment.course === courseId)
+    const enrollments = db.enrollments.filter(enrollment => enrollment.course === courseId)
 
   return (
     <div className="col width-auto">
@@ -74,13 +74,13 @@ const Grades = () => {
             <tbody>
                 {
                     enrollments.map(enrollment => {
-                        const user = DB.users.find(user => user._id === enrollment.user)
+                        const user = db.users.find(user => user._id === enrollment.user)
                         return (
                             <tr >
                                 <td valign="top" className="student-name color-red">{user.firstName} {user.lastName}</td>
                                 {
                                     assignments.map(assignment => {
-                                        const grade = DB.grades.find((grade) => grade.student === user._id && grade.assignment === assignment._id);
+                                        const grade = db.grades.find((grade) => grade.student === user._id && grade.assignment === assignment._id);
                                         return (
                                             <td valign="top">{grade?.grade || "-"}</td>
                                         )

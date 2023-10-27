@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styles.css"
 
-import DB from '../Database/index.js'
+import db from '../Database/index.js'
 import { useState } from 'react';
 import AddCourseForm from './CourseForm';
 
@@ -11,7 +11,7 @@ function Dashboard() {
 		startDate: "2023-09-10", endDate: "2023-12-15",
 		description: "New Description"
 	}
-  const [courses, setCourses] = useState(DB.courses)
+  const [courses, setCourses] = useState(db.courses)
 	const [course, setCourse] = useState(defaultCourse)
 	const [hiddenForm, setHiddenForm] = useState(true)
 	const [formType, setFormType] = useState(null)

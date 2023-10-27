@@ -1,11 +1,11 @@
 import { useParams } from 'react-router';
-import DB from '../../Database/index.js'
+import db from '../../Database/index.js'
 import { useState } from 'react';
 import ModulesForm from './ModulesForm.jsx';
 
 const ModuleList = () => {
     const {courseId} = useParams();
-    const {modules} = DB;
+    const {modules} = db;
     const [courseModules, setCourseModules] = useState(modules.filter((module) => module.course === courseId));
     const newModule = {
         name: "New Module",
@@ -26,11 +26,6 @@ const ModuleList = () => {
     }
 
 return (
-    courseModules.length === 0 ? 
-    <div className="col-xs-12 col-md-8 alert alert-danger height-100" role="alert">
-        No modules published for this course
-    </div>
-    :
     <div className="col-xs-12 col-md-8">
         <div className="button-bar">
             <button className="btn kanbas-btn-gray">Collapse All</button>
@@ -57,6 +52,14 @@ return (
         }
         
         <hr className="mt-2 mb-2"/>
+
+        {
+            courseModules.length === 0 
+            &&
+            <div className="alert alert-danger" role="alert">
+                No modules published for this course
+            </div>
+        }
         
         {
             courseModules.map((module, index) => { return (
@@ -71,7 +74,7 @@ return (
                             <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
                             <i className="fa fa-caret-down float-end ms-1" aria-hidden="true"></i>
                             <i className="fa fa-plus float-end ms-2" aria-hidden="true"></i>
-                            <i className="fa-solid fa-edit footer-item color-green ms-2"
+                            <i className="fa-solid fa-edit footer-item text-warning ms-2"
                                 onClick={(e) => {
                                     e.stopPropagation(); 
                                     setModule(module);

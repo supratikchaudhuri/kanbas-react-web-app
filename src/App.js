@@ -18,6 +18,8 @@ function App() {
           <Route path="/labs/*"   element={<Labs/>}/>
           <Route path="/kanbas/*" element={<Kanbas/>}/>
         </Routes>
+
+        
     </BrowserRouter>
   );
 }
