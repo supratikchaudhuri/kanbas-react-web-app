@@ -2,7 +2,6 @@ import React from 'react'
 
 const AddCourseForm = ({formType, courses, setCourses, course, setCourse, hiddenForm, setHiddenForm}) => {
 
-  console.log(formType);
   const addCourse = (e) => {
     e.preventDefault()
     setCourses([...courses, {...course, _id: new Date().getTime()}])

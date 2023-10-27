@@ -1,13 +1,28 @@
-import { useParams } from "react-router"
-import db from "../../Database"
+import { useDispatch, useSelector } from "react-redux";
+import { addAssignment, editAssignment, setAssignment } from "./assignmentsReducer";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const AssignmentEditor = () => {
-    const { assignmentId } = useParams();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const {courseId, formType} = location.state;
 
-    const { assignments } = db;
-    const assignment = assignments.find(assignment => assignment._id === assignmentId)
+    const dispatch = useDispatch();
+    const assignment = useSelector((state) => state.assignmentsReducer.assignment);
 
-  return (
+    const submit = (e) => {
+        e.preventDefault();
+
+        if(formType === "ADD") {
+        dispatch(addAssignment({...assignment, course: courseId}))
+        }
+        else {
+        dispatch(editAssignment(assignment))
+        }
+        navigate('../assignments');
+    }
+
+    return (
     <div className="col edit-page">
         <div className="float-end">
             <i className="fa-solid fa-circle-check color-green"></i>
@@ -16,12 +31,18 @@ const AssignmentEditor = () => {
 
         <hr className="mt-5"/>
         
-        <label for="ass-name">Assignment Name</label>
-        <input id="ass-name" type="text" className="form-control mt-1" value={assignment.title}/>
-    
-        <textarea rows="5" className="form-control mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo consequuntur illo inventore recusandae dolores fuga, atque labore reiciendis cupiditate harum laborum, odio fugiat obcaecati maxime. Perferendis dolorem earum quos eos magnam distinctio! Explicabo dolore itaque animi, delectus sed porro temporibus enim ad modi corporis, mollitia corrupti doloremque facere eveniet tempora.</textarea>
 
-        <form className="edit-ass-form ">
+        <form className="edit-ass-form" onSubmit={(e) => {submit(e)}}>
+
+            <label for="ass-name">Assignment Name</label>
+            <input id="ass-name" type="text" className="form-control mt-1" 
+              onChange={e => dispatch(setAssignment({...assignment, title: e.target.value}))}
+              value={assignment?.title} required/>
+        
+            <textarea rows="5" className="form-control mt-3"
+              onChange={e => dispatch(setAssignment({...assignment, description: e.target.value}))}
+            >{assignment?.description}</textarea> 
+
             <div className="form-group row">
                 <label for="points" className="col-sm-2 col-form-label ta-right ">Points</label>
                 <div className="col-sm-10">
@@ -136,19 +157,18 @@ const AssignmentEditor = () => {
                     <button className="mt-3 width-100 kanbas-btn-gray">+ Add</button>
                 </div>
             </div>
+
+            <hr/>
+
+            <input className="form-check-input" type="checkbox" value="" id="ass-edited-notify-users-checkbox"/>
+            <label className="form-check-label" for="ass-edited-notify-users-checkbox">
+                Notify users that this content has changed
+            </label>
+            <div className="float-end mb-5">
+              <button className="btn kanbas-btn-gray" type="button">Cancel</button>
+              <button className="btn kanbas-red-btn ms-2" type="submit">Save</button>
+            </div>
         </form>
-
-
-        <hr/>
-
-        <input className="form-check-input" type="checkbox" value="" id="ass-edited-notify-users-checkbox"/>
-        <label className="form-check-label" for="ass-edited-notify-users-checkbox">
-            Notify users that this content has changed
-        </label>
-        <div className="float-end mb-5">
-            <a href="../assignments"><button className="btn kanbas-btn-gray">Cancel</button></a>
-            <a href="../assignments"><button className="btn kanbas-red-btn ms-2">Save</button></a>
-        </div>
     </div>
 )}
 

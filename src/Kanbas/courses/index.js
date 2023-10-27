@@ -14,7 +14,7 @@ function Courses() {
   const { courseId } = useParams();
   const course = db.courses.find((course) => course._id === courseId);
   const curPathSplit = useParams()['*'].split('/')
-  console.log(curPathSplit);
+  
   return (
     !course ? <Navigate to="../dashboard"/> :
     <div className="main">

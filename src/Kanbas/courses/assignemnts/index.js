@@ -1,23 +1,19 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import db from "../../Database/index";
 
 import "./styles.css"
 import AssignmentEditor from "./AssignmentEditor";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteAssignment, setAssignment } from "./assignmentsReducer";
 
 function Assignments() {
-  const { courseId } = useParams();
-  const assignments = db.assignments;
+    const { courseId } = useParams();
+    const dispatch = useDispatch();
 
-  const courseAssignments = assignments.filter((assignment) => assignment.course === courseId);
+    const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+    console.log(assignments);
 
   return (
-    courseAssignments.length === 0 
-    ?
-    <div className="col width-100 alert alert-danger height-100" role="alert">
-        No assignments created
-    </div>
-    :
     <div class="col width-100">
         <div class="row">
             <div class="col">
@@ -26,7 +22,14 @@ function Assignments() {
             <div class="col">
                 <div class="float-end">
                     <button class="btn kanbas-btn-gray">+ Group</button>
-                    <button class="btn kanbas-red-btn mt-1 ms-2">+ Assignment</button>
+                    <Link to="create-assignment" 
+                        state={{courseId, formType: "ADD"}}
+                        element={<AssignmentEditor />}>
+                        <button class="btn kanbas-red-btn mt-1 ms-2" 
+                            onClick={(e) => dispatch(setAssignment({}))}
+                            >+ Assignment
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
@@ -34,31 +37,52 @@ function Assignments() {
         
         <hr class="mt-3"/>
 
-        <ul class="list-group assignments">
-            <li class="list-group-item list-group-item-secondary">
-                Assignments
-                <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                <i class="fa fa-plus float-end ms-3" aria-hidden="true"></i>
-                <label class="custom-label float-end">40% of Total</label>
-            </li>
+        {
+            assignments.filter(assignment => assignment.course === courseId).length === 0 
+            ?
+            <div className="col width-100 alert alert-danger" role="alert">
+                No assignments created
+            </div>
+            :
+            <ul class="list-group assignments">
+                <li class="list-group-item list-group-item-secondary">
+                    Assignments
+                    <i class="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
+                    <i class="fa fa-plus float-end ms-3" aria-hidden="true"></i>
+                    <label class="custom-label float-end">40% of Total</label>
+                </li>
 
-            {
-                courseAssignments.map(assignment => {return (
-                    <li class="list-group-item sub-heading"> 
-                        <div class="d-flex ass-box align-items-center">
-                            <i class="fa-solid fa-grip-vertical color-gray"></i>
-                            <i class="fa-regular fa-pen-to-square color-gray ms-3"></i>
-                            <div class="ass-description ms-3">
-                                <Link to={assignment._id} element={<AssignmentEditor/>}>{assignment.title}</Link>
-                                <p><strong>Due</strong> Sep 18 at 11:59pm | -/100 pts</p>
+                {
+                    assignments
+                    .filter(assignment => assignment.course === courseId)
+                    .map(assignment => {return (
+                        <li class="list-group-item sub-heading"> 
+                            <div class="d-flex ass-box align-items-center">
+                                <i class="fa-solid fa-grip-vertical color-gray"></i>
+                                <i class="fa-regular fa-pen-to-square color-gray ms-3"></i>
+                                <div class="ass-description ms-3">
+                                    <Link to={assignment._id} 
+                                        state={{courseId, formType: "EDIT"}}
+                                        element={<AssignmentEditor/>}
+                                        onClick={() => dispatch(setAssignment(assignment))}>
+                                        {assignment.title}
+                                    </Link>
+                                    <p><strong>Due</strong> Sep 18 at 11:59pm | -/100 pts</p>
+                                </div>
+
+                                <div className="d-flex align-items-center ms-auto">
+                                <i class="fa fa-check-circle color-green" aria-hidden="true"></i>
+                                <i className="fa-solid fa-trash footer-item color-red ms-4"
+                                    onClick={(e) => {dispatch(deleteAssignment(assignment._id))}}
+                                ></i> 
+                                <i class="fa fa-ellipsis-v float-end ms-4  color-gray" aria-hidden="true"></i>
+                                </div>
                             </div>
-                            <i class="fa fa-check-circle ms-auto color-green" aria-hidden="true"></i>
-                            <i class="fa fa-ellipsis-v float-end ms-4  color-gray" aria-hidden="true"></i>
-                        </div>
-                    </li>
-                )})
-            }
-        </ul>
+                        </li>
+                    )})
+                }
+            </ul>
+        }
 
     </div>
 )}
