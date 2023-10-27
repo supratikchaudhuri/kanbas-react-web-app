@@ -9,9 +9,9 @@ function CounterRedux() {
     <div>
       <h2>Counter Redux</h2>
       <h3>{count}</h3>
-      <button onClick={() => dispatch(increment())}>
+      <button className="btn btn-primary" onClick={() => dispatch(increment())}>
         Increment </button>
-      <button onClick={() => dispatch(decrement())}>
+      <button className="btn btn-primary ms-2" onClick={() => dispatch(decrement())}>
         Decrement </button>
     </div>
   );
