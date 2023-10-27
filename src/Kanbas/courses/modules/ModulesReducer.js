@@ -1,9 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import db from "../../Database";
 
+const defaultModule = {
+  name: "",
+  description: "",
+}
 const initialState = {
   modules: db.modules,
-  module: { name: "New Module 123", description: "New Description" },
+  module: defaultModule
 };
 
 const modulesSlice = createSlice({
@@ -12,16 +16,18 @@ const modulesSlice = createSlice({
   reducers: {
     addModule: (state, action) => {
       state.modules = [
-        { ...action.payload, _id: new Date().getTime().toString() },
-          ...state.modules,
+        ...state.modules,
+        { ...action.payload, _id: new Date().getTime().toString() }
       ];
+      state.module = defaultModule;
     },
     deleteModule: (state, action) => {
       state.modules = state.modules.filter(
         (module) => module._id !== action.payload
       );
+      state.module = defaultModule;
     },
-    updateModule: (state, action) => {
+    editModule: (state, action) => {
       state.modules = state.modules.map((module) => {
         if (module._id === action.payload._id) {
           return action.payload;
@@ -29,6 +35,7 @@ const modulesSlice = createSlice({
           return module;
         }
       });
+      state.module = defaultModule;
     },
     setModule: (state, action) => {
       state.module = action.payload;
@@ -36,6 +43,5 @@ const modulesSlice = createSlice({
   },
 });
 
-export const { addModule, deleteModule,
-  updateModule, setModule } = modulesSlice.actions;
+export const { addModule, deleteModule, editModule, setModule } = modulesSlice.actions;
 export default modulesSlice.reducer;

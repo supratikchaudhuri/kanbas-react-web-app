@@ -1,23 +1,17 @@
 import { useParams } from 'react-router';
-import db from '../../Database/index.js'
 import { useState } from 'react';
 import ModulesForm from './ModulesForm.jsx';
 
+import { useSelector, useDispatch } from "react-redux";
+import { deleteModule, setModule } from "./ModulesReducer";
+
 const ModuleList = () => {
     const {courseId} = useParams();
-    const {modules} = db;
-    const [courseModules, setCourseModules] = useState(modules.filter((module) => module.course === courseId));
-    const newModule = {
-        name: "New Module",
-        description: "New Description"
-    }
-    const [module, setModule] = useState(newModule);
+    const dispatch = useDispatch();
+    const modules = useSelector((state) => state.modulesReducer.modules);
+    
     const [hiddenForm, setHiddenForm] = useState(true);
     const [formType, setFormType] = useState(null);
-
-    const deleteModule = (moduleId) => {
-        setCourseModules(courseModules.filter((module) => module._id !== moduleId));
-    }
 
     const displayForm = (e, type) => {
         e.preventDefault()
@@ -34,17 +28,14 @@ return (
                 <option selected>Publish All</option>
             </select>
             <button className="btn kanbas-red-btn ms-2"
-                onClick={(e) => {setModule(newModule); displayForm(e, "ADD")}}
+                onClick={(e) => {displayForm(e, "ADD")}}
             > + Module</button>
         </div>
 
         { !hiddenForm 
             && 
             <ModulesForm 
-                module={module}
-                setModule={setModule}
-                courseModules={courseModules} 
-                setCourseModules={setCourseModules}
+                courseId={courseId}
                 hiddenForm={hiddenForm}
                 setHiddenForm={setHiddenForm}
                 formType={formType}
@@ -54,7 +45,7 @@ return (
         <hr className="mt-2 mb-2"/>
 
         {
-            courseModules.length === 0 
+            modules.filter((module) => module.course === courseId).length === 0 
             &&
             <div className="alert alert-danger" role="alert">
                 No modules published for this course
@@ -62,7 +53,9 @@ return (
         }
         
         {
-            courseModules.map((module, index) => { return (
+          modules
+            .filter((module) => module.course === courseId)
+            .map((module, index) => { return (
                 <ul key={index} className="list-group new-module">
                 <li className="list-group-item list-group-item-secondary">
 
@@ -77,12 +70,12 @@ return (
                             <i className="fa-solid fa-edit footer-item text-warning ms-2"
                                 onClick={(e) => {
                                     e.stopPropagation(); 
-                                    setModule(module);
+                                    dispatch(setModule(module));
                                     displayForm(e, "EDIT");
                                 }}
                             ></i>
                             <i className="fa-solid fa-trash footer-item color-red ms-2"
-                                onClick={(e) => {e.stopPropagation(); deleteModule(module._id)}}
+                                onClick={(e) => {dispatch(deleteModule(module._id)); e.stopPropagation()}}
                             ></i> 
                             <i className="fa fa-ellipsis-v float-end color-gray ms-2" aria-hidden="true"></i>
                         </div>

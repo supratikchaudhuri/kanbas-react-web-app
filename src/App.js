@@ -10,7 +10,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    // <HashRouter>
     <BrowserRouter>
         <Routes>
           <Route path="/"         element={<Navigate to="/labs"/>}/>
@@ -18,8 +17,6 @@ function App() {
           <Route path="/labs/*"   element={<Labs/>}/>
           <Route path="/kanbas/*" element={<Kanbas/>}/>
         </Routes>
-
-        
     </BrowserRouter>
   );
 }
