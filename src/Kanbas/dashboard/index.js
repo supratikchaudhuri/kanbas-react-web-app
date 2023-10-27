@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 function Dashboard({courses, setCourses}) {
 	const defaultCourse = {
-		name: "New Course",      number: "New Number",
+		name: "New Course",      number: "NN 101",
 		startDate: "2023-09-10", endDate: "2023-12-15",
 		description: "New Description"
 	}

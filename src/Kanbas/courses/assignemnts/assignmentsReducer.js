@@ -1,9 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import db from "../../Database";
 
+const defaultAssignment = {
+  title: "New Assignment",
+  description: "Assignment Description",
+}
+
 const initialState = {
   assignments: db.assignments,
-  assignment: {},
+  assignment: defaultAssignment,
 };
 
 const assignmentSlice = createSlice({
@@ -15,13 +20,13 @@ const assignmentSlice = createSlice({
         ...state.assignments,
         { ...action.payload, _id: new Date().getTime().toString() }
       ];
-      state.assignment = {};
+      state.assignment = defaultAssignment;
     },
     deleteAssignment: (state, action) => {
       state.assignments = state.assignments.filter(
         (assignment) => assignment._id !== action.payload
       );
-      state.assignment = {};
+      state.assignment = defaultAssignment;
     },
     editAssignment: (state, action) => {
       state.assignments = state.assignments.map((assignment) => {
@@ -31,7 +36,7 @@ const assignmentSlice = createSlice({
           return assignment;
         }
       });
-      state.assignment = {};
+      state.assignment = defaultAssignment;
     },
     setAssignment: (state, action) => {
       state.assignment = action.payload;

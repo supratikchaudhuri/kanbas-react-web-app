@@ -73,7 +73,12 @@ function Assignments() {
                                 <div className="d-flex align-items-center ms-auto">
                                 <i class="fa fa-check-circle color-green" aria-hidden="true"></i>
                                 <i className="fa-solid fa-trash footer-item color-red ms-4"
-                                    onClick={(e) => {dispatch(deleteAssignment(assignment._id))}}
+                                    onClick={(e) => {
+                                      var ans = window.confirm("Are you sure you want to delete this assignment?")
+                                      if(ans) {
+                                        dispatch(deleteAssignment(assignment._id))
+                                      }
+                                    }}
                                 ></i> 
                                 <i class="fa fa-ellipsis-v float-end ms-4  color-gray" aria-hidden="true"></i>
                                 </div>

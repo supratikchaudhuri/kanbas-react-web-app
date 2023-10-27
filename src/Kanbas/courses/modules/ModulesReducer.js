@@ -2,9 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import db from "../../Database";
 
 const defaultModule = {
-  name: "",
-  description: "",
+  name: "New Module",
+  description: "Module Description",
 }
+
 const initialState = {
   modules: db.modules,
   module: defaultModule

@@ -42,7 +42,8 @@ const AddCourseForm = ({formType, courses, setCourses, course, setCourse, hidden
           </div>
         </div>
 
-        <textarea rows="5" className="form-control mt-3"
+        <label for="course-description">Course Description</label>
+        <textarea id="course-description" rows="5" className="form-control mb-3"
           onChange={(e) => setCourse({...course, description: e.target.value})}>
           {course.description}
         </textarea>
@@ -51,7 +52,7 @@ const AddCourseForm = ({formType, courses, setCourses, course, setCourse, hidden
           <div className="col">
             <label>Start Date</label>
             <input className="date-picker width-100" type="date" 
-              value={course.startdate}
+              value={course.startDate}
               onChange={(e) => setCourse({...course, startDate: e.target.value})}
             />
           </div>
