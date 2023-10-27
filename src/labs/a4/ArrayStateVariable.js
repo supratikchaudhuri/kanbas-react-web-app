@@ -10,12 +10,12 @@ function ArrayStateVariable() {
     return (
         <div>
             <h2>Array State Variable</h2>
-            <button className="btn btn-primary" onClick={addElement}>Add Element</button>
+            <button className="btn btn-success" onClick={addElement}>Add Element</button>
             <ul>
                 {array.map((item, index) => (
                     <li key={index}>
                         {item}
-                        <button className="btn btn-primary mt-1 ms-2" onClick={() => deleteElement(index)}>
+                        <button className="btn btn-danger mt-1 ms-2" onClick={() => deleteElement(index)}>
                             Delete
                         </button>
                     </li>

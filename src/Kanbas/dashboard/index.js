@@ -84,8 +84,7 @@ function Dashboard({courses, setCourses}) {
                                 </div>
                         </div>
                     </Link>
-                    )
-                })
+                )})
             }
         </div>
         </div>
