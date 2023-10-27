@@ -1,36 +1,62 @@
 import { Link, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/js/dist/dropdown.js"
+import "bootstrap/js/dist/dropdown.js";
 
 function KanbasNavigation() {
   const { pathname } = useLocation();
 
-	const links = [{
-			name: 'Account', path: 'account', icon: 'fa fa-user-circle color-gray nav-avatar'
-		}, {
-			name: 'Dashboard', path: 'dashboard', icon: 'fa fa-tachometer'
-		}, {
-			name: 'Courses', path: 'courses/RS101', icon: 'fa fa-book'
-		}, {
-			name: 'Inbox', path: 'inbox', icon: 'fa fa-inbox'
-		}, {
-			name: 'Calender', path: 'calender', icon: 'fa fa-calendar-days'
-		}, {
-			name: 'History', path: 'history', icon: 'fa-regular fa-clock'
-		}, {
-			name: 'Studio', path: 'studio', icon: 'fa-solid fa-film'
-		}, {
-			name: 'Commons', path: 'commons', icon: 'fa fa-terminal'
-		}, {
-			name: 'Help', path: 'help', icon: 'fa fa-question-circle'
-		}
-	]
+  const links = [
+    {
+      name: "Account",
+      path: "account",
+      icon: "fa fa-user-circle color-gray nav-avatar",
+    },
+    {
+      name: "Dashboard",
+      path: "dashboard",
+      icon: "fa fa-tachometer",
+    },
+    {
+      name: "Courses",
+      path: "courses/RS101",
+      icon: "fa fa-book",
+    },
+    {
+      name: "Inbox",
+      path: "inbox",
+      icon: "fa fa-inbox",
+    },
+    {
+      name: "Calender",
+      path: "calender",
+      icon: "fa fa-calendar-days",
+    },
+    {
+      name: "History",
+      path: "history",
+      icon: "fa-regular fa-clock",
+    },
+    {
+      name: "Studio",
+      path: "studio",
+      icon: "fa-solid fa-film",
+    },
+    {
+      name: "Commons",
+      path: "commons",
+      icon: "fa fa-terminal",
+    },
+    {
+      name: "Help",
+      path: "help",
+      icon: "fa fa-question-circle",
+    },
+  ];
 
-	return (
-	<>
-	<nav className="navbar navbar-light xs-nav d-md-none">
-
-    {/* <div className="dropdown">
+  return (
+    <>
+      <nav className="navbar navbar-light xs-nav d-md-none">
+        {/* <div className="dropdown">
     <a className="btn mt-2 mb-2" href="." role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
         <i className="fa fa-bars color-white" aria-hidden="true"></i>
     </a>
@@ -82,75 +108,166 @@ function KanbasNavigation() {
     </ul>
     </div> */}
 
-        <button className="navbar-toggler color-white mt-2 mb-2" data-bs-toggle="collapse" data-target="#kanbas-navigation" >
-            <i className="fa fa-bars" aria-hidden="true"></i>
+        <button
+          className="navbar-toggler color-white mt-2 mb-2"
+          data-bs-toggle="collapse"
+          data-target="#kanbas-navigation"
+        >
+          <i className="fa fa-bars" aria-hidden="true"></i>
         </button>
 
-        <button className="navbar-toggler d-lg-none color-white pr-3" data-bs-toggle="collapse" data-target="secondary-navigation">
-            <i className="fa fa-chevron-down" aria-hidden="true"></i>   
+        <button
+          className="navbar-toggler d-lg-none color-white pr-3"
+          data-bs-toggle="collapse"
+          data-target="secondary-navigation"
+        >
+          <i className="fa fa-chevron-down" aria-hidden="true"></i>
         </button>
 
-        <div className="collapse navbar-collapse dropdown-navbar" id="kanbas-navigation">
-            <ul clss="navbar-nav" style={{"padding-left": 0}}>
-            {
-                links.map((link, index) => {
-                    return (
-                    <li key={index} className={pathname.includes(link.path) ? 'active' : ''}>
-                        <Link className="color-red" to={link.path}>
-                        <i className={`${link.icon} mr-3`} aria-hidden="true"></i>
-                          {link.name}
-                        </Link>
-                    </li>
-                    )
-                })
-            }
-            </ul>
+        <div
+          className="collapse navbar-collapse dropdown-navbar"
+          id="kanbas-navigation"
+        >
+          <ul clss="navbar-nav" style={{ "padding-left": 0 }}>
+            {links.map((link, index) => {
+              return (
+                <li
+                  key={index}
+                  className={pathname.includes(link.path) ? "active" : ""}
+                >
+                  <Link className="color-red" to={link.path}>
+                    <i className={`${link.icon} mr-3`} aria-hidden="true"></i>
+                    {link.name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
 
-        <div className="collapse navbar-collapse dropdown-navbar" id="secondary-navigation">
-            <ul>
-                <li><a className="color-red" href="home"><i className="fa-solid fa-house"></i> Home</a></li>
-                <li><a className ="color-red" href="."><i className="fa-solid fa-network-wired"></i>Modules</a></li>
-                <li><a className ="color-red" href="."><i className="fa-solid fa-plug"></i>Piazza</a></li>
-                <li><a className ="color-red" href="."><i className="fa-solid fa-plug"></i>Zoom Meetings</a></li>
-                <li><a className ="color-red" href="assignments"><i className="fa-regular fa-pen-to-square"></i>Assignments</a></li>
-                <li><a className ="color-red" href="."><i className="fa-solid fa-rocket"></i>Quizes</a></li>
-                <li><a className ="color-red" href="grades"><i className="fa-regular fa-address-book"></i>Grades</a></li>
-                <li><a className ="color-red" href="."><i className="fa-solid fa-user-group"></i>People</a></li>
-                <li><a className ="color-red" href="."><i className="fa-solid fa-plug"></i>Panopto Video</a></li>
-                <li><a className ="color-red" href="."><i className="fa-regular fa-comments"></i>Discussions</a></li>
-                <li><a className ="color-red" href="."><i className="fa-solid fa-bullhorn"></i>Announcements</a></li>
-                <li><a className ="color-red" href="."><i className="fa-regular fa-file"></i>Pages</a></li>
-                <li><a className ="color-red" href="."><i className="fa-regular fa-folder"></i>Files</a></li>
-                <li><a className ="color-red" href="."><i className="fa-solid fa-file-invoice"></i>Rubrics</a></li>
-                <li><a className ="color-red" href="."><i className="fa-solid fa-bullseye"></i>Outcomes</a></li>
-                <li><a className ="color-red" href="."><i className="fa-regular fa-circle"></i>Collaboration</a></li>
-                <li><a className ="color-red" href="."><i className="fa-solid fa-file-lines"></i>Syllabus</a></li>
-                <li><a className ="color-red" href="settings"><i className="fa-solid fa-gear"></i>Settings</a></li>
-            </ul>
+        <div
+          className="collapse navbar-collapse dropdown-navbar"
+          id="secondary-navigation"
+        >
+          <ul>
+            <li>
+              <a className="color-red" href="home">
+                <i className="fa-solid fa-house"></i> Home
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-solid fa-network-wired"></i>Modules
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-solid fa-plug"></i>Piazza
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-solid fa-plug"></i>Zoom Meetings
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href="assignments">
+                <i className="fa-regular fa-pen-to-square"></i>Assignments
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-solid fa-rocket"></i>Quizes
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href="grades">
+                <i className="fa-regular fa-address-book"></i>Grades
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-solid fa-user-group"></i>People
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-solid fa-plug"></i>Panopto Video
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-regular fa-comments"></i>Discussions
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-solid fa-bullhorn"></i>Announcements
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-regular fa-file"></i>Pages
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-regular fa-folder"></i>Files
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-solid fa-file-invoice"></i>Rubrics
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-solid fa-bullseye"></i>Outcomes
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-regular fa-circle"></i>Collaboration
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href=".">
+                <i className="fa-solid fa-file-lines"></i>Syllabus
+              </a>
+            </li>
+            <li>
+              <a className="color-red" href="settings">
+                <i className="fa-solid fa-gear"></i>Settings
+              </a>
+            </li>
+          </ul>
         </div>
-  	</nav>
+      </nav>
 
-	<div className="sidebar d-none d-md-block">
-		<ul>
-			<li>
-				<img src={require('../images/neu-logo-white.png')} style={{"max-width": "60px", "transform": "scale(1.5)"}} alt="neu-logo" className="neu-logo"/>
-			</li>
-			{
-				links.map((link) => {
-					return (
-						<li className={pathname.includes(link.path) ? 'active' : ''}>
-							<Link to={link.path}>
-							<i className={`${link.icon} mr-3`} aria-hidden="true"></i>
-								{link.name}
-							</Link>
-						</li>
-					)
-				})
-			}
-		</ul>
-  	</div>
-	</>
-)}
+      <div className="sidebar d-none d-md-block">
+        <ul>
+          <li>
+            <img
+              src={require("../images/neu-logo-white.png")}
+              style={{ "max-width": "60px", transform: "scale(1.5)" }}
+              alt="neu-logo"
+              className="neu-logo"
+            />
+          </li>
+          {links.map((link) => {
+            return (
+              <li className={pathname.includes(link.path) ? "active" : ""}>
+                <Link to={link.path}>
+                  <i className={`${link.icon} mr-3`} aria-hidden="true"></i>
+                  {link.name}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </>
+  );
+}
 
 export default KanbasNavigation;
