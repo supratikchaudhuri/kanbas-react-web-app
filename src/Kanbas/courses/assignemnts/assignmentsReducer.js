@@ -7,6 +7,7 @@ const defaultAssignment = {
   dueDate: "2023-10-04",
   availableFromDate: "2023-09-20",
   availableUntilDate: "2023-10-04",
+  points: 100,
 };
 
 const initialState = {

@@ -86,7 +86,7 @@ function Assignments() {
                           ).format(dueDate);
                           return formattedDate;
                         })()}{" "}
-                        at 11:59pm | -/100 pts
+                        at 11:59pm | -/{assignment.points} pts
                       </p>
                     </div>
 

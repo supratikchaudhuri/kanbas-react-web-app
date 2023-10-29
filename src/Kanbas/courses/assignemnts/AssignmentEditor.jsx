@@ -59,7 +59,7 @@ const AssignmentEditor = () => {
         <label for="ass-description">Assignment Description</label>
         <textarea
           if="ass-description"
-          rows="5"
+          rows="4"
           className="form-control mt-1"
           onChange={(e) =>
             dispatch(
@@ -71,6 +71,26 @@ const AssignmentEditor = () => {
         </textarea>
 
         <div className="form-group row mt-3">
+          <div className="form-group row mb-3">
+            <label for="points" className="col-sm-2 col-form-label ta-right ">
+              Points
+            </label>
+            <div className="col-sm-10 width-50">
+              <input
+                id="points"
+                type="number"
+                readonly
+                className="form-control"
+                value={assignment.points}
+                onChange={(e) =>
+                  dispatch(
+                    setAssignment({ ...assignment, points: e.target.value })
+                  )
+                }
+              />
+            </div>
+          </div>
+
           <label className="col-sm-2 col-form-label ta-right">Assign</label>
           <div className="col-sm-10 sub-type-box p-3">
             <h5>Due</h5>
