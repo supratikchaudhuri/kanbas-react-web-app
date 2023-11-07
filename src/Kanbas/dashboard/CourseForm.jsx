@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 
 const AddCourseForm = ({
@@ -9,23 +10,31 @@ const AddCourseForm = ({
   hiddenForm,
   setHiddenForm,
 }) => {
-  const addCourse = (e) => {
+  const addCourse = async (e) => {
+    const res = await axios.post("http://localhost:4000/api/courses", course);
+
     e.preventDefault();
-    setCourses([...courses, { ...course, _id: new Date().getTime() }]);
+    setCourses([...res.data, ...courses]);
     setHiddenForm(!hiddenForm);
   };
 
-  const editCourse = (e) => {
+  const editCourse = async (e) => {
     e.preventDefault();
+    const res = await axios.put(
+      `http://localhost:4000/api/courses/${course._id}`,
+      course
+    );
+
     setCourses(
       courses.map((c) => {
         if (c._id === course._id) {
-          return course;
+          return res.data;
         } else {
           return c;
         }
       })
     );
+
     setHiddenForm(!hiddenForm);
   };
 

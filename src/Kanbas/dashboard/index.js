@@ -4,6 +4,7 @@ import "./styles.css";
 import { useState } from "react";
 import AddCourseForm from "./CourseForm";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Dashboard({ courses, setCourses }) {
   const defaultCourse = {
@@ -23,8 +24,16 @@ function Dashboard({ courses, setCourses }) {
     setHiddenForm(!hiddenForm);
   };
 
-  const deleteCourse = (courseId) => {
-    setCourses(courses.filter((course) => course._id !== courseId));
+  const deleteCourse = async (courseId) => {
+    try {
+      const res = await axios.delete(
+        `http://localhost:4000/api/courses/${courseId}`
+      );
+      console.log(res.data);
+      setCourses(courses.filter((course) => course._id !== courseId));
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
