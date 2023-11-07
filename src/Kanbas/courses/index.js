@@ -8,12 +8,25 @@ import Modules from "./modules/index.js";
 import Assignments from "./assignemnts/index.js";
 import AssignmentEditor from "./assignemnts/AssignmentEditor.jsx";
 import Grades from "./grades/index.js";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Courses({ courses }) {
   const { courseId } = useParams();
-
-  const course = courses.find((course) => course._id === courseId);
   const curPathSplit = useParams()["*"].split("/");
+
+  const [course, setCourse] = useState({});
+
+  const findCourseById = async (courseId) => {
+    const res = await axios.get(
+      `http://localhost:4000/api/courses/${courseId}`
+    );
+    setCourse(res.data);
+  };
+
+  useEffect(() => {
+    findCourseById(courseId);
+  }, [courseId]);
 
   return (
     <div className="main">

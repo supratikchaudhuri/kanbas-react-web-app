@@ -1,136 +1,192 @@
-import { useParams } from 'react-router';
-import { useState } from 'react';
-import ModulesForm from './ModulesForm.jsx';
+import { useParams } from "react-router";
+import { useEffect, useState } from "react";
+import ModulesForm from "./ModulesForm.jsx";
 
 import { useSelector, useDispatch } from "react-redux";
-import { deleteModule, setModule } from "./ModulesReducer";
+import { deleteModule, setModule, setModules } from "./ModulesReducer";
+import * as client from "./client";
 
 const ModuleList = () => {
-    const {courseId} = useParams();
-    const dispatch = useDispatch();
-    const modules = useSelector((state) => state.modulesReducer.modules);
-    
-    const [hiddenForm, setHiddenForm] = useState(true);
-    const [formType, setFormType] = useState(null);
+  const { courseId } = useParams();
+  const dispatch = useDispatch();
 
-    const displayForm = (e, type) => {
-        e.preventDefault()
-        setFormType(type)
-        setHiddenForm(!hiddenForm)
-    }
+  const [hiddenForm, setHiddenForm] = useState(true);
+  const [formType, setFormType] = useState(null);
 
-return (
+  useEffect(() => {
+    client
+      .findModulesForCourse(courseId)
+      .then((modules) => dispatch(setModules(modules)));
+  }, [courseId]);
+
+  const modules = useSelector((state) => state.modulesReducer.modules);
+
+  const displayForm = (e, type) => {
+    e.preventDefault();
+    setFormType(type);
+    setHiddenForm(!hiddenForm);
+  };
+
+  const handleDeleteModule = (moduleId) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+
+  return (
     <div className="col-xs-12 col-md-8">
-        <div className="button-bar">
-            <button className="btn kanbas-btn-gray">Collapse All</button>
-            <button className="btn kanbas-btn-gray ms-2">View Progress</button>
-            <select className="form-select color-gray inline width-auto ms-2">
-                <option selected>Publish All</option>
-            </select>
-            <button className="btn kanbas-red-btn ms-2"
-                onClick={(e) => {displayForm(e, "ADD")}}
-            > + Module</button>
+      <div className="button-bar">
+        <button className="btn kanbas-btn-gray">Collapse All</button>
+        <button className="btn kanbas-btn-gray ms-2">View Progress</button>
+        <select className="form-select color-gray inline width-auto ms-2">
+          <option selected>Publish All</option>
+        </select>
+        <button
+          className="btn kanbas-red-btn ms-2"
+          onClick={(e) => {
+            displayForm(e, "ADD");
+          }}
+        >
+          {" "}
+          + Module
+        </button>
+      </div>
+
+      {!hiddenForm && (
+        <ModulesForm
+          courseId={courseId}
+          hiddenForm={hiddenForm}
+          setHiddenForm={setHiddenForm}
+          formType={formType}
+        />
+      )}
+
+      <hr className="mt-2 mb-2" />
+
+      {modules.filter((module) => module.course === courseId).length === 0 && (
+        <div className="alert alert-danger" role="alert">
+          No modules published for this course
         </div>
+      )}
 
-        { !hiddenForm 
-            && 
-            <ModulesForm 
-                courseId={courseId}
-                hiddenForm={hiddenForm}
-                setHiddenForm={setHiddenForm}
-                formType={formType}
-            /> 
-        }
-        
-        <hr className="mt-2 mb-2"/>
+      {modules
+        .filter((module) => module.course === courseId)
+        .map((module, index) => {
+          return (
+            <ul key={index} className="list-group new-module">
+              <li className="list-group-item list-group-item-secondary">
+                <div className="d-flex flex-row">
+                  <div>
+                    {module.name} - {module.description}
+                  </div>
+                  <div className="d-flex flex-row ms-auto">
+                    <i
+                      className="fa fa-check-circle float-end color-green"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      className="fa fa-caret-down float-end ms-1"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      className="fa fa-plus float-end ms-2"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      className="fa-solid fa-edit footer-item text-warning ms-2"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        dispatch(setModule(module));
+                        displayForm(e, "EDIT");
+                      }}
+                    ></i>
+                    <i
+                      className="fa-solid fa-trash footer-item color-red ms-2"
+                      onClick={(e) => {
+                        handleDeleteModule(module._id);
+                        e.stopPropagation();
+                      }}
+                    ></i>
+                    <i
+                      className="fa fa-ellipsis-v float-end color-gray ms-2"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                </div>
+              </li>
 
-        {
-            modules.filter((module) => module.course === courseId).length === 0 
-            &&
-            <div className="alert alert-danger" role="alert">
-                No modules published for this course
-            </div>
-        }
-        
-        {
-          modules
-            .filter((module) => module.course === courseId)
-            .map((module, index) => { return (
-                <ul key={index} className="list-group new-module">
-                <li className="list-group-item list-group-item-secondary">
+              {module.contents &&
+                module.contents.map((content) => {
+                  if (!content.topics || !content.topics.length) {
+                    return <></>;
+                  }
 
-                    <div className="d-flex flex-row">
-                        <div>
-                            {module.name} - {module.description}
-                        </div>
-                        <div className='d-flex flex-row ms-auto'>
-                            <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-                            <i className="fa fa-caret-down float-end ms-1" aria-hidden="true"></i>
-                            <i className="fa fa-plus float-end ms-2" aria-hidden="true"></i>
-                            <i className="fa-solid fa-edit footer-item text-warning ms-2"
-                                onClick={(e) => {
-                                    e.stopPropagation(); 
-                                    dispatch(setModule(module));
-                                    displayForm(e, "EDIT");
-                                }}
-                            ></i>
-                            <i className="fa-solid fa-trash footer-item color-red ms-2"
-                                onClick={(e) => {dispatch(deleteModule(module._id)); e.stopPropagation()}}
-                            ></i> 
-                            <i className="fa fa-ellipsis-v float-end color-gray ms-2" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    
-                </li>
+                  return (
+                    <>
+                      <li className="list-group-item sub-heading">
+                        {content.heading}
+                        <i
+                          className="fa fa-ellipsis-v float-end ms-4 color-gray"
+                          aria-hidden="true"
+                        ></i>
+                        <i
+                          className="fa fa-check-circle float-end color-green"
+                          aria-hidden="true"
+                        ></i>
+                      </li>
 
-                {
-                    module.contents && module.contents.map((content) => {
-                    if (!content.topics || !content.topics.length) {
-                        return (<></>)
-                    }
-
-                    return (
-                        <>
-                        <li className="list-group-item sub-heading"> 
-                            {content.heading}
-                            <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                            <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-                        </li>
-
-                        {
-                            content.topics && content.topics.map(topic => {
-                            if(topic.link) {
-                                return (
-                                <li className="list-group-item">
-                                    <a href={topic.link} target="_blank" rel="noopener noreferrer" className="link color-red">
-                                    <i className="fa fa-link" style={{color: "rgb(140, 138, 138)"}} aria-hidden="true"></i>
-                                    {topic.name}
-                                    <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                                    <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                )
-                            }
-                            else {
-                                return (
-                                <li className="list-group-item">
-                                    {topic.name}
-                                    <i className="fa fa-ellipsis-v float-end ms-4 color-gray" aria-hidden="true"></i>
-                                    <i className="fa fa-check-circle float-end color-green" aria-hidden="true"></i>
-                                </li>
-                                )
-                            }
-                            })
-                        }
-                        </>
-                    )
-                    })
-                }
-                </ul>
-            )})
-        }
+                      {content.topics &&
+                        content.topics.map((topic) => {
+                          if (topic.link) {
+                            return (
+                              <li className="list-group-item">
+                                <a
+                                  href={topic.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="link color-red"
+                                >
+                                  <i
+                                    className="fa fa-link"
+                                    style={{ color: "rgb(140, 138, 138)" }}
+                                    aria-hidden="true"
+                                  ></i>
+                                  {topic.name}
+                                  <i
+                                    className="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <i
+                                    className="fa fa-check-circle float-end color-green"
+                                    aria-hidden="true"
+                                  ></i>
+                                </a>
+                              </li>
+                            );
+                          } else {
+                            return (
+                              <li className="list-group-item">
+                                {topic.name}
+                                <i
+                                  className="fa fa-ellipsis-v float-end ms-4 color-gray"
+                                  aria-hidden="true"
+                                ></i>
+                                <i
+                                  className="fa fa-check-circle float-end color-green"
+                                  aria-hidden="true"
+                                ></i>
+                              </li>
+                            );
+                          }
+                        })}
+                    </>
+                  );
+                })}
+            </ul>
+          );
+        })}
     </div>
-  )
-}
+  );
+};
 
-export default ModuleList
+export default ModuleList;

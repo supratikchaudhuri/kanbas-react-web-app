@@ -25,7 +25,6 @@ function Kanbas() {
 
   useEffect(() => {
     findAllCourses();
-    console.log(courses);
   }, []);
 
   return (
