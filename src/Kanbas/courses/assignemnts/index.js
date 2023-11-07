@@ -1,18 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import "./styles.css";
 import AssignmentEditor from "./AssignmentEditor";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteAssignment, setAssignment } from "./assignmentsReducer";
+import {
+  deleteAssignment,
+  setAssignment,
+  setAssignments,
+} from "./assignmentsReducer";
+import * as client from "./client";
 
 function Assignments() {
   const { courseId } = useParams();
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    client
+      .findAssignmentsForCourse(courseId)
+      .then((assignments) => dispatch(setAssignments(assignments)));
+  }, [courseId]);
+
   const assignments = useSelector(
     (state) => state.assignmentsReducer.assignments
   );
+
+  const handleDeleteAssignment = (assignmentId) => {
+    client.deleteAssignment(assignmentId).then((status) => {
+      dispatch(deleteAssignment(assignmentId));
+    });
+  };
 
   return (
     <div class="col width-100">
@@ -102,7 +119,7 @@ function Assignments() {
                             "Are you sure you want to delete this assignment?"
                           );
                           if (ans) {
-                            dispatch(deleteAssignment(assignment._id));
+                            handleDeleteAssignment(assignment._id);
                           }
                         }}
                       ></i>

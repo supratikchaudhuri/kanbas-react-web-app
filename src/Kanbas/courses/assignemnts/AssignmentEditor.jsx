@@ -5,6 +5,7 @@ import {
   setAssignment,
 } from "./assignmentsReducer";
 import { useLocation, useNavigate } from "react-router-dom";
+import * as client from "./client";
 
 const AssignmentEditor = () => {
   const navigate = useNavigate();
@@ -16,18 +17,19 @@ const AssignmentEditor = () => {
     (state) => state.assignmentsReducer.assignment
   );
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
 
     if (formType === "ADD") {
-      dispatch(addAssignment({ ...assignment, course: courseId }));
+      const newAssignment = await client.createAssignment(courseId, assignment);
+      console.log(newAssignment);
+      dispatch(addAssignment({ ...newAssignment, course: courseId }));
     } else {
-      dispatch(editAssignment(assignment));
+      const updatedAssignment = await client.updateAssignment(assignment);
+      dispatch(editAssignment(updatedAssignment));
     }
     navigate("../assignments");
   };
-
-  //   console.log(assignment);
 
   return (
     <div className="col edit-page">
