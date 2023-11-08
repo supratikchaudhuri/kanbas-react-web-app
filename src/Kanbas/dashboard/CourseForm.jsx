@@ -13,10 +13,10 @@ const AddCourseForm = ({
   setHiddenForm,
 }) => {
   const addCourse = async (e) => {
+    e.preventDefault();
     const res = await axios.post(`${BASE_URL}/courses`, course);
 
-    e.preventDefault();
-    setCourses([...res.data, ...courses]);
+    setCourses([...courses, res.data]);
     setHiddenForm(!hiddenForm);
   };
 
