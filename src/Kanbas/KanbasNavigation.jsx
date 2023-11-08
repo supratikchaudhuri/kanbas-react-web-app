@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/js/dist/dropdown.js";
 
-function KanbasNavigation() {
+function KanbasNavigation({ courses }) {
   const { pathname } = useLocation();
 
   const links = [
@@ -18,7 +18,7 @@ function KanbasNavigation() {
     },
     {
       name: "Courses",
-      path: "courses/RS101",
+      path: "courses",
       icon: "fa fa-book",
     },
     {
@@ -131,14 +131,18 @@ function KanbasNavigation() {
           <ul clss="navbar-nav" style={{ "padding-left": 0 }}>
             {links.map((link, index) => {
               return (
-                <li
-                  key={index}
-                  className={pathname.includes(link.path) ? "active" : ""}
-                >
-                  <Link className="color-red" to={link.path}>
-                    <i className={`${link.icon} mr-3`} aria-hidden="true"></i>
-                    {link.name}
-                  </Link>
+                <li className={pathname.includes(link.path) ? "active" : ""}>
+                  {link.name === "Courses" ? (
+                    <Link to={link.path + "/RS101"}>
+                      <i className={`${link.icon} mr-3`} aria-hidden="true"></i>
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <Link to={link.path}>
+                      <i className={`${link.icon} mr-3`} aria-hidden="true"></i>
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               );
             })}
@@ -257,10 +261,17 @@ function KanbasNavigation() {
           {links.map((link) => {
             return (
               <li className={pathname.includes(link.path) ? "active" : ""}>
-                <Link to={link.path}>
-                  <i className={`${link.icon} mr-3`} aria-hidden="true"></i>
-                  {link.name}
-                </Link>
+                {link.name === "Courses" && courses.length > 0 ? (
+                  <Link to={`${link.path}/${courses[0]._id}`}>
+                    <i className={`${link.icon} mr-3`} aria-hidden="true"></i>
+                    {link.name}
+                  </Link>
+                ) : (
+                  <Link to={link.path}>
+                    <i className={`${link.icon} mr-3`} aria-hidden="true"></i>
+                    {link.name}
+                  </Link>
+                )}
               </li>
             );
           })}

@@ -17,7 +17,6 @@ function Kanbas() {
 
   const findAllCourses = async () => {
     try {
-      console.log("BASE_URL", BASE_URL);
       const res = await axios.get(`${BASE_URL}/courses`);
       setCourses(res.data);
     } catch (err) {
@@ -32,7 +31,7 @@ function Kanbas() {
   return (
     <>
       <Provider store={store}>
-        <KanbasNavigation />
+        <KanbasNavigation courses={courses} />
 
         <div class="container main">
           <Routes>
