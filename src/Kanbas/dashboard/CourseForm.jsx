@@ -1,6 +1,8 @@
 import axios from "axios";
 import React from "react";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 const AddCourseForm = ({
   formType,
   courses,
@@ -11,7 +13,7 @@ const AddCourseForm = ({
   setHiddenForm,
 }) => {
   const addCourse = async (e) => {
-    const res = await axios.post("http://localhost:4000/api/courses", course);
+    const res = await axios.post(`${BASE_URL}/courses`, course);
 
     e.preventDefault();
     setCourses([...res.data, ...courses]);
@@ -20,10 +22,7 @@ const AddCourseForm = ({
 
   const editCourse = async (e) => {
     e.preventDefault();
-    const res = await axios.put(
-      `http://localhost:4000/api/courses/${course._id}`,
-      course
-    );
+    const res = await axios.put(`${BASE_URL}/courses/${course._id}`, course);
 
     setCourses(
       courses.map((c) => {

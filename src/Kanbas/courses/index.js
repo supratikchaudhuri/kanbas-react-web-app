@@ -12,15 +12,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function Courses({ courses }) {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const { courseId } = useParams();
   const curPathSplit = useParams()["*"].split("/");
 
   const [course, setCourse] = useState({});
 
   const findCourseById = async (courseId) => {
-    const res = await axios.get(
-      `http://localhost:4000/api/courses/${courseId}`
-    );
+    const res = await axios.get(`${BASE_URL}/courses/${courseId}`);
     setCourse(res.data);
   };
 

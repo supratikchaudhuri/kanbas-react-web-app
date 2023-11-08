@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 function Dashboard({ courses, setCourses }) {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
+
   const defaultCourse = {
     name: "New Course",
     number: "NN 101",
@@ -26,9 +28,7 @@ function Dashboard({ courses, setCourses }) {
 
   const deleteCourse = async (courseId) => {
     try {
-      const res = await axios.delete(
-        `http://localhost:4000/api/courses/${courseId}`
-      );
+      const res = await axios.delete(`${BASE_URL}/courses/${courseId}`);
       console.log(res.data);
       setCourses(courses.filter((course) => course._id !== courseId));
     } catch (err) {

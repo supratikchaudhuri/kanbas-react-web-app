@@ -1,10 +1,10 @@
 import axios from "axios";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export const findAssignmentsForCourse = async (courseId) => {
   try {
-    const res = await axios.get(
-      `http://localhost:4000/api/courses/${courseId}/assignments`
-    );
+    const res = await axios.get(`${BASE_URL}/courses/${courseId}/assignments`);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -14,7 +14,7 @@ export const findAssignmentsForCourse = async (courseId) => {
 export const createAssignment = async (courseId, assignment) => {
   try {
     const res = await axios.post(
-      `http://localhost:4000/api/courses/${courseId}/assignments`,
+      `${BASE_URL}/courses/${courseId}/assignments`,
       assignment
     );
     return res.data;
@@ -26,7 +26,7 @@ export const createAssignment = async (courseId, assignment) => {
 export const updateAssignment = async (assignment) => {
   try {
     const res = await axios.put(
-      `http://localhost:4000/api/assignments/${assignment._id}`,
+      `${BASE_URL}/assignments/${assignment._id}`,
       assignment
     );
     return res.data;
@@ -37,9 +37,7 @@ export const updateAssignment = async (assignment) => {
 
 export const deleteAssignment = async (assignmentId) => {
   try {
-    const res = await axios.delete(
-      `http://localhost:4000/api/assignments/${assignmentId}`
-    );
+    const res = await axios.delete(`${BASE_URL}/assignments/${assignmentId}`);
     return res.data;
   } catch (error) {
     console.log(error);
