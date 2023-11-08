@@ -19,8 +19,12 @@ function Courses({ courses }) {
   const [course, setCourse] = useState({});
 
   const findCourseById = async (courseId) => {
-    const res = await axios.get(`${BASE_URL}/courses/${courseId}`);
-    setCourse(res.data);
+    try {
+      const res = await axios.get(`${BASE_URL}/courses/${courseId}`);
+      setCourse(res.data);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
