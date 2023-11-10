@@ -30,7 +30,7 @@ function EncodingParametersInURLs() {
 
   return (
     <div>
-      {/* <h3>Encoding Parameters In URLs</h3>
+      <h3>Encoding Parameters In URLs</h3>
       <h4>Integrating React with APIs</h4>
       <h5>Fetching Welcome</h5>
       <h6>{welcome}</h6>
@@ -64,26 +64,26 @@ function EncodingParametersInURLs() {
         Fetch Substraction of {a} - {b}
       </button>
       <h3>Path Parameters</h3>
-      <a href={`${API_BASE}/a5/add/${a}/${b}`} className="btn btn-primary">
+      <a href={`${BASE_URL}/a5/add/${a}/${b}`} className="btn btn-primary">
         Add {a} + {b}
       </a>
-      <a href={`${API_BASE}/a5/subtract/${a}/${b}`} className="btn btn-danger">
+      <a href={`${BASE_URL}/a5/subtract/${a}/${b}`} className="btn btn-danger">
         Substract {a} - {b}
       </a>
 
       <h3>Query Parameters</h3>
       <a
-        href={`${API_BASE}/a5/calculator?operation=add&a=${a}&b=${b}`}
+        href={`${BASE_URL}/a5/calculator?operation=add&a=${a}&b=${b}`}
         className="btn btn-primary"
       >
         Add {a} + {b}
       </a>
       <a
-        href={`${API_BASE}/a5/calculator?operation=subtract&a=${a}&b=${b}`}
+        href={`${BASE_URL}/a5/calculator?operation=subtract&a=${a}&b=${b}`}
         className="btn btn-danger"
       >
         Substract {a} - {b}
-      </a> */}
+      </a>
     </div>
   );
 }
