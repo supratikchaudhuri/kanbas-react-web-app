@@ -59,7 +59,7 @@ function EncodingParametersInURLs() {
       </button>
       <button
         onClick={() => fetchSubtraction(a, b)}
-        className="btn btn-danger mb-2"
+        className="btn btn-danger mb-2 ms-2"
       >
         Fetch Substraction of {a} - {b}
       </button>
@@ -67,7 +67,10 @@ function EncodingParametersInURLs() {
       <a href={`${BASE_URL}/a5/add/${a}/${b}`} className="btn btn-primary">
         Add {a} + {b}
       </a>
-      <a href={`${BASE_URL}/a5/subtract/${a}/${b}`} className="btn btn-danger">
+      <a
+        href={`${BASE_URL}/a5/subtract/${a}/${b}`}
+        className="btn btn-danger ms-2"
+      >
         Substract {a} - {b}
       </a>
 
@@ -80,7 +83,7 @@ function EncodingParametersInURLs() {
       </a>
       <a
         href={`${BASE_URL}/a5/calculator?operation=subtract&a=${a}&b=${b}`}
-        className="btn btn-danger"
+        className="btn btn-danger ms-2"
       >
         Substract {a} - {b}
       </a>

@@ -32,7 +32,7 @@ function WorkingWithObjects() {
       <h3>Modifying Properties</h3>
       <a
         href={`${URL}/title/${assignment.title}`}
-        className="btn btn-primary me-2 float-end"
+        className="btn btn-primary ms-2 float-end"
       >
         Update Title
       </a>
@@ -45,27 +45,29 @@ function WorkingWithObjects() {
         type="text"
       />
 
-      <button onClick={updateTitle} className="w-100 btn btn-primary mb-2">
+      <button onClick={updateTitle} className="btn btn-primary mb-2">
         Update Title to: {assignment.title}
       </button>
-      <button onClick={fetchAssignment} className="w-100 btn btn-danger mb-2">
+      <button onClick={fetchAssignment} className="btn btn-danger mb-2 ms-2">
         Fetch Assignment
       </button>
 
-      <a
-        href={`${URL}/score/${assignment.score}`}
-        className="btn btn-primary me-2 float-end"
-      >
-        Update Score
-      </a>
-      <input
-        onChange={(e) =>
-          setAssignment({ ...assignment, score: e.target.value })
-        }
-        value={assignment.score}
-        className="form-control mb-2 w-75"
-        type="number"
-      />
+      <div>
+        <a
+          href={`${URL}/score/${assignment.score}`}
+          className="btn btn-primary me-2 float-end"
+        >
+          Update Score
+        </a>
+        <input
+          onChange={(e) =>
+            setAssignment({ ...assignment, score: e.target.value })
+          }
+          value={assignment.score}
+          className="form-control mb-2 w-75"
+          type="number"
+        />
+      </div>
 
       <a
         href={`${URL}/completed/${assignment.completed}`}
