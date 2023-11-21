@@ -120,14 +120,7 @@ function WorkingWithArrays() {
         Create Todo
       </a>
       <h3>Deleting from an Array</h3>
-      {/* <label>Todo Id to delete: </label>
-      <input
-        value={todo.id}
-        onChange={(e) => setTodo({ ...todo, id: parseInt(e.target.value) })}
-        className="form-control mb-2"
-        type="number"
-        id="input-delete-todo"
-      /> */}
+
       <a
         href={`${API}/${todo.id}/delete`}
         className="btn btn-primary mb-2 w-25"
@@ -194,8 +187,8 @@ function WorkingWithArrays() {
         Update Completed to {todo.completed.toString()}
       </a>
       <br />
-      <h3>Edit Todo</h3>
-      <label>Edit Title: </label>
+      <h3>Todo List</h3>
+      <label>New/Edit Title: </label>
       <input
         onChange={(e) =>
           setEditTodo({
@@ -207,7 +200,7 @@ function WorkingWithArrays() {
         type="text"
         class="form-control mb-2"
       />
-      <lable>Edit Description: </lable>
+      <lable>New/Edit Description: </lable>
       <textarea
         onChange={(e) =>
           setEditTodo({ ...editTodo, description: e.target.value })
@@ -218,7 +211,7 @@ function WorkingWithArrays() {
         id="exampleFormControlTextarea1"
         rows="3"
       />
-      <label>Edit Date: </label>
+      <label>New/Edit Date: </label>
       <input
         onChange={(e) =>
           setEditTodo({
