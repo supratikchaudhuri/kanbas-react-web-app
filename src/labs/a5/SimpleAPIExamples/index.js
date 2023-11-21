@@ -7,7 +7,9 @@ function SimpleAPIExamples() {
     <>
       <h3>Simple API Examples</h3>
       <EncodingParametersInURLs />
+      <hr />
       <WorkingWithObjects />
+      <hr />
       <WorkingWithArrays />
     </>
   );

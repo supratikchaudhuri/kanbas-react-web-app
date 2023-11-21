@@ -36,14 +36,17 @@ function WorkingWithObjects() {
       >
         Update Title
       </a>
-      <input
-        onChange={(e) =>
-          setAssignment({ ...assignment, title: e.target.value })
-        }
-        value={assignment.title}
-        className="form-control mb-2 w-75"
-        type="text"
-      />
+      <div>
+        <label>Assignment Title</label>
+        <input
+          onChange={(e) =>
+            setAssignment({ ...assignment, title: e.target.value })
+          }
+          value={assignment.title}
+          className="form-control mb-2 w-75"
+          type="text"
+        />
+      </div>
 
       <button onClick={updateTitle} className="btn btn-primary mb-2">
         Update Title to: {assignment.title}
@@ -59,14 +62,17 @@ function WorkingWithObjects() {
         >
           Update Score
         </a>
-        <input
-          onChange={(e) =>
-            setAssignment({ ...assignment, score: e.target.value })
-          }
-          value={assignment.score}
-          className="form-control mb-2 w-75"
-          type="number"
-        />
+        <div>
+          <label>Assignment Score</label>
+          <input
+            onChange={(e) =>
+              setAssignment({ ...assignment, score: e.target.value })
+            }
+            value={assignment.score}
+            className="form-control mb-2 w-75"
+            type="number"
+          />
+        </div>
       </div>
 
       <a
@@ -75,6 +81,7 @@ function WorkingWithObjects() {
       >
         Update Completed
       </a>
+
       <input
         onChange={(e) =>
           setAssignment({
