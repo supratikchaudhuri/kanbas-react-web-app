@@ -10,6 +10,7 @@ import store from "./store";
 import "./index.css";
 import Account from "./Account";
 import axios from "axios";
+import Signin from "./users/signin";
 
 function Kanbas() {
   const [courses, setCourses] = useState([]);
@@ -48,6 +49,8 @@ function Kanbas() {
               path="courses/:courseId/*"
               element={<Courses courses={courses} />}
             />
+
+            <Route path="/signin" element={<Signin />} />
           </Routes>
         </div>
       </Provider>
