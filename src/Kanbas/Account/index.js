@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "../index.css";
 import "./styles.css";
 import AccountNavigation from "./AccountNavigation";
-import { Navigate, Route, Routes } from "react-router-dom";
 import Profile from "./profile/Profile";
 import EditProfile from "./profile/EditProfile";
-import { account } from "../users/client";
+import { account } from "./users/client";
 
 const Account = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(undefined);
 
   const getUser = async () => {
+    console.log("getUser");
     const loggedInUser = await account();
+    console.log(loggedInUser);
     return loggedInUser;
   };
 
   useEffect(() => {
+    console.log("useEffect");
     const fetchData = async () => {
       const _user = await getUser();
       setUser(_user);
@@ -24,24 +27,41 @@ const Account = () => {
     fetchData();
   }, []);
 
+  console.log(user);
+
   return (
     <div className="container main">
-      {/* TODO: user not loggeg in login button, wlse display user info */}
+      {/* TODO: user not logged in login button, else display user info */}
       <div className="row root">
         <div className="mt-3">
           <i className="fa fa-bars bars color-red" aria-hidden="true"></i>
-          <h4>Supratik Chaudhuri's Profile</h4>
+          <h4>
+            {user?.firstName} {user?.lastName}'s Profile
+          </h4>
         </div>
-
         <hr className=" mt-4 mb-4" />
-
         <AccountNavigation />
-
-        <Routes>
-          <Route path="/" element={<Navigate to="profile" />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="edit-profile" element={<EditProfile />} />
-        </Routes>
+        {user === undefined ? (
+          <div className="col width-100 alert alert-danger" role="alert">
+            User not logged in
+            <button>Login here</button>
+          </div>
+        ) : (
+          <Routes>
+            <Route path="/" element={<Navigate to="profile" />} />
+            {user ? ( // Check if user is not null
+              <>
+                <Route path="profile" element={<Profile user={user} />} />
+                <Route
+                  path="edit-profile"
+                  element={<EditProfile user={user} />}
+                />
+              </>
+            ) : (
+              <Route path="login" element={<Navigate to="/login" />} />
+            )}
+          </Routes>
+        )}
       </div>
     </div>
   );

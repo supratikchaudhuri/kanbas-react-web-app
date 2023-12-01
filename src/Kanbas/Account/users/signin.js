@@ -1,7 +1,11 @@
 import * as client from "./client";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import { setUser } from "../Account/profile/ProfileReducer";
+// import { useDispatch } from "react-redux";
 function Signin() {
+  //   const dispatch = useDispatch();
+
   const [credentials, setCredentials] = useState({
     username: "iron_man",
     password: "stark123",
@@ -9,12 +13,14 @@ function Signin() {
 
   const navigate = useNavigate();
   const signin = async () => {
-    const user = await client.signin(credentials);
+    const user = client.signin(credentials);
 
     if (user === undefined) {
       alert("Invalid credentials");
       return;
     }
+
+    // dispatch(setUser(user));
     navigate("/kanbas/account");
   };
 
