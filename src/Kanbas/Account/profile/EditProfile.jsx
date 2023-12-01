@@ -1,12 +1,19 @@
+import { useState } from "react";
 import * as client from "../users/client";
 
 const EditProfile = ({ user }) => {
+  const [updatedUser, setUpdatedUser] = useState(user);
+
   const updateUser = async (e) => {
     e.preventDefault();
+    const status = await client.updateUser(updatedUser);
+    console.log(status);
 
-    const updatedUser = await client.updateUser(user);
-    // console.log(updatedUser);
+    window.location.href = "/kanbas/account";
   };
+
+  console.log(updatedUser);
+
   return (
     <div className="col profile-details">
       <a href="." className="float-end">
@@ -35,7 +42,13 @@ const EditProfile = ({ user }) => {
                 className="form-control"
                 id="firstName-input"
                 name="firstName"
-                value={user.firstName}
+                value={updatedUser.firstName}
+                onChange={(e) =>
+                  setUpdatedUser({
+                    ...updatedUser,
+                    [e.target.name]: e.target.value,
+                  })
+                }
               />
 
               <label for="lastName-input" className="mt-2 fw-600">
@@ -46,7 +59,13 @@ const EditProfile = ({ user }) => {
                 className="form-control"
                 id="lastName-input"
                 name="lastName"
-                value={user.lastName}
+                value={updateUser.lastName}
+                onChange={(e) =>
+                  setUpdatedUser({
+                    ...updatedUser,
+                    [e.target.name]: e.target.value,
+                  })
+                }
               />
 
               <label for="email-input" className="mt-2 fw-600">
@@ -57,7 +76,13 @@ const EditProfile = ({ user }) => {
                 className="form-control"
                 id="email-input"
                 name="email"
-                value={user.email}
+                value={updatedUser.email}
+                onChange={(e) =>
+                  setUpdatedUser({
+                    ...updatedUser,
+                    [e.target.name]: e.target.value,
+                  })
+                }
               />
 
               <label for="dob-input" className="mt-2 fw-600">
@@ -68,17 +93,32 @@ const EditProfile = ({ user }) => {
                 className="form-control"
                 id="dob-input"
                 name="dob"
-                value={new Date(user.dob).toLocaleDateString("en-CA")}
+                value={new Date(updatedUser.dob).toLocaleDateString("en-CA")}
+                onChange={(e) =>
+                  setUpdatedUser({
+                    ...updatedUser,
+                    [e.target.name]: e.target.value,
+                  })
+                }
               />
 
               <label for="role-input" className="fw-600 mt-2">
                 Role:
               </label>
-              <select id="ass-grp role-input" className="form-select">
-                <option>STUDENT</option>
-                <option>FACULTY</option>
-                <option>ADMIN</option>
-                <option>INSTRUCTOR</option>
+              <select
+                id="ass-grp role-input"
+                className="form-select"
+                onChange={(e) =>
+                  setUpdatedUser({
+                    ...updateUser,
+                    [e.target.name]: e.target.value,
+                  })
+                }
+              >
+                <option value="STUDENT">STUDENT</option>
+                <option value="FACULTY">FACULTY</option>
+                <option value="ADMIN">ADMIN</option>
+                <option value="INSTRUCTOR">INSTRUCTOR</option>
               </select>
 
               <label for="password-input" className="mt-2 fw-600">
@@ -91,6 +131,12 @@ const EditProfile = ({ user }) => {
                 id="password-input"
                 name="password"
                 value={user.password}
+                onChange={(e) =>
+                  setUpdatedUser({
+                    ...updatedUser,
+                    [e.target.name]: e.target.value,
+                  })
+                }
               />
 
               {/* <label for="title-input" className="mt-2 fw-600">

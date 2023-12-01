@@ -13,13 +13,13 @@ function Signin() {
 
   const navigate = useNavigate();
   const signin = async () => {
-    const user = client.signin(credentials);
+    const user = await client.signin(credentials);
+    console.log(user);
 
     if (user === undefined) {
       alert("Invalid credentials");
       return;
     }
-
     // dispatch(setUser(user));
     navigate("/kanbas/account");
   };

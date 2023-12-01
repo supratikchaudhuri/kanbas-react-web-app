@@ -20,9 +20,13 @@ export const account = async () => {
   }
 };
 
-export const updateUser = async (user) => {
+export const updateUser = async (updatedUser) => {
   try {
-    const response = await axios.put(`${USERS_API}/${user._id}`, user);
+    console.log(updatedUser);
+    const response = await axios.put(
+      `${USERS_API}/${updatedUser._id}`,
+      updatedUser
+    );
     return response.data;
   } catch (err) {
     console.log(err);
