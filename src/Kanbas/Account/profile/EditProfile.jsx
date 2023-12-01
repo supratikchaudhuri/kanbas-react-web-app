@@ -34,7 +34,7 @@ const EditProfile = ({ user }) => {
             </div>
 
             <div className="col-md-12 col-lg-10">
-              <label for="firstName-input" className=" fw-600">
+              <label for="firstName-input" className=" fw-600 mt-2">
                 First Name:
               </label>
               <input
@@ -59,7 +59,7 @@ const EditProfile = ({ user }) => {
                 className="form-control"
                 id="lastName-input"
                 name="lastName"
-                value={updateUser.lastName}
+                value={updatedUser.lastName}
                 onChange={(e) =>
                   setUpdatedUser({
                     ...updatedUser,
@@ -85,7 +85,7 @@ const EditProfile = ({ user }) => {
                 }
               />
 
-              <label for="dob-input" className="mt-2 fw-600">
+              <label htmlFor="dob-input" className="mt-2 fw-600">
                 Date of birth:
               </label>
               <input
@@ -102,15 +102,17 @@ const EditProfile = ({ user }) => {
                 }
               />
 
-              <label for="role-input" className="fw-600 mt-2">
+              <label htmlFor="role-input" className="fw-600 mt-2">
                 Role:
               </label>
               <select
-                id="ass-grp role-input"
+                id="role-input"
                 className="form-select"
+                name="role"
+                value={updatedUser.role}
                 onChange={(e) =>
                   setUpdatedUser({
-                    ...updateUser,
+                    ...updatedUser,
                     [e.target.name]: e.target.value,
                   })
                 }
@@ -119,7 +121,26 @@ const EditProfile = ({ user }) => {
                 <option value="FACULTY">FACULTY</option>
                 <option value="ADMIN">ADMIN</option>
                 <option value="INSTRUCTOR">INSTRUCTOR</option>
+                <option value="USER">USER</option>
               </select>
+
+              <label for="username-input" className=" fw-600 mt-2">
+                Username:
+              </label>
+              <input
+                disabled
+                type="text"
+                className="form-control"
+                id="username-input"
+                name="username"
+                value={updatedUser.username}
+                onChange={(e) =>
+                  setUpdatedUser({
+                    ...updatedUser,
+                    [e.target.name]: e.target.value,
+                  })
+                }
+              />
 
               <label for="password-input" className="mt-2 fw-600">
                 Password:
