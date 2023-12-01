@@ -11,14 +11,11 @@ const Account = () => {
   const [user, setUser] = useState(undefined);
 
   const getUser = async () => {
-    console.log("getUser");
     const loggedInUser = await account();
-    console.log(loggedInUser);
     return loggedInUser;
   };
 
   useEffect(() => {
-    console.log("useEffect");
     const fetchData = async () => {
       const _user = await getUser();
       setUser(_user);
@@ -35,9 +32,7 @@ const Account = () => {
       <div className="row root">
         <div className="mt-3">
           <i className="fa fa-bars bars color-red" aria-hidden="true"></i>
-          <h4>
-            {user?.firstName} {user?.lastName}'s Profile
-          </h4>
+          <h4>Profile of _____USER_____</h4>
         </div>
         <hr className=" mt-4 mb-4" />
         <AccountNavigation />

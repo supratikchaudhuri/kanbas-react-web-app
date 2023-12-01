@@ -11,6 +11,8 @@ import "./index.css";
 import Account from "./Account";
 import axios from "axios";
 import Signin from "./Account/users/signin";
+import UsersTable from "./Account/users/UsersTable";
+import Signup from "./Account/users/Signup";
 
 function Kanbas() {
   const [courses, setCourses] = useState([]);
@@ -51,6 +53,9 @@ function Kanbas() {
             />
 
             <Route path="/signin" element={<Signin />} />
+            <Route path="/signup" element={<Signup />} />
+
+            <Route path="/admin/users" element={<UsersTable />} />
           </Routes>
         </div>
       </Provider>

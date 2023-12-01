@@ -1,11 +1,8 @@
 import * as client from "./client";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { setUser } from "../Account/profile/ProfileReducer";
-// import { useDispatch } from "react-redux";
-function Signin() {
-  //   const dispatch = useDispatch();
 
+function Signin() {
   const [credentials, setCredentials] = useState({
     username: "iron_man",
     password: "stark123",
@@ -27,7 +24,8 @@ function Signin() {
   return (
     <div className="container main">
       <div className="row root">
-        <h1>Signin</h1>
+        <h1 className="heading">Signin</h1>
+        <hr />
         <input
           value={credentials.username}
           onChange={(e) =>

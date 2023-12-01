@@ -1,3 +1,5 @@
+import { signout } from "../users/client";
+
 const Profile = ({ user }) => {
   return (
     <div className="col profile-details">
@@ -71,6 +73,15 @@ const Profile = ({ user }) => {
               </a>
             </li>
           </ul>
+          <button
+            className="btn btn-light kanbas-red-btn btn-border"
+            onClick={(e) => {
+              signout();
+              window.location.href = "/kanbas/signin";
+            }}
+          >
+            Sign Out
+          </button>
         </div>
       </div>
     </div>
