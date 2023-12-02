@@ -103,15 +103,30 @@ select {
 }
 .kanbas-yellow-btn {
   color: white;
+  background-color: rgb(253, 222, 66);
+}
+.kanbas-yellow-btn:hover {
+  color: white;
   background-color: rgb(253, 218, 44);
+  filter: brightness(90%);
 }
 .kanbas-blue-btn {
   color: white;
   background-color: rgb(43, 37, 228);
 }
+.kanbas-blue-btn:hover {
+  color: white;
+  background-color: rgb(43, 37, 228);
+  filter: brightness(90%);
+}
 .kanbas-green-btn {
   color: white;
   background-color: rgb(5, 150, 5);
+}
+.kanbas-green-btn:hover {
+  color: white;
+  background-color: rgb(5, 150, 5);
+  filter: brightness(90%);
 }
 .kanbas-red-btn {
   color: white;

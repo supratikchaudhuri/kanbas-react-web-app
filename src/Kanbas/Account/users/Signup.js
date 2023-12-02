@@ -33,7 +33,7 @@ function Signup() {
         </label>
         <input
           id="username-input"
-          className="form-control"
+          className="form-control mt-2"
           value={credentials.username}
           onChange={(e) =>
             setCredentials({
