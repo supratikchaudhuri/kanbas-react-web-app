@@ -19,8 +19,8 @@ function Signup() {
   };
 
   return (
-    <div className="main">
-      <div className="root">
+    <div className="container main">
+      <div className="row root">
         <h1 className="heading">Signup</h1>
         <hr />
         {error && (
@@ -28,7 +28,12 @@ function Signup() {
             {error}
           </div>
         )}
+        <label className="fw-600" for="username-input">
+          Username:{" "}
+        </label>
         <input
+          id="username-input"
+          className="form-control"
           value={credentials.username}
           onChange={(e) =>
             setCredentials({
@@ -37,7 +42,14 @@ function Signup() {
             })
           }
         />
+
+        <label for="password-input" className="mt-3 fw-600">
+          Password:{" "}
+        </label>
         <input
+          type="password"
+          id="password-input"
+          className="form-control mt-2"
           value={credentials.password}
           onChange={(e) =>
             setCredentials({
@@ -46,7 +58,15 @@ function Signup() {
             })
           }
         />
-        <button onClick={signup}>Signup</button>
+        <button className="btn kanbas-red-btn mt-3" onClick={signup}>
+          Signup
+        </button>
+        <small className="mt-4">
+          Already have an account?{" "}
+          <a className="color-red" href="/kanbas/signin">
+            Signin here
+          </a>
+        </small>
       </div>
     </div>
   );

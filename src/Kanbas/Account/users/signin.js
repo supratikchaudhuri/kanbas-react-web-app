@@ -26,19 +26,41 @@ function Signin() {
       <div className="row root">
         <h1 className="heading">Signin</h1>
         <hr />
+
+        <label className="fw-600" for="username-input">
+          Username:{" "}
+        </label>
         <input
+          id="username-input"
+          className="form-control"
           value={credentials.username}
           onChange={(e) =>
             setCredentials({ ...credentials, username: e.target.value })
           }
         />
+
+        <label for="password-input" className="mt-3 fw-600">
+          Password:{" "}
+        </label>
         <input
+          id="password-input"
+          className="form-control mt-2"
+          type="password"
           value={credentials.password}
           onChange={(e) =>
             setCredentials({ ...credentials, password: e.target.value })
           }
         />
-        <button onClick={signin}> Signin </button>
+        <button className="btn kanbas-red-btn mt-3" onClick={signin}>
+          Signin
+        </button>
+
+        <small className="mt-4">
+          Don't have an account?{" "}
+          <a className="color-red" href="/kanbas/signup">
+            Signup here
+          </a>
+        </small>
       </div>
     </div>
   );
