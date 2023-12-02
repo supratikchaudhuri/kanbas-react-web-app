@@ -101,6 +101,18 @@ select {
   color: rgb(52, 50, 50);
   background-color: rgb(225, 225, 225);
 }
+.kanbas-yellow-btn {
+  color: white;
+  background-color: rgb(253, 218, 44);
+}
+.kanbas-blue-btn {
+  color: white;
+  background-color: rgb(43, 37, 228);
+}
+.kanbas-green-btn {
+  color: white;
+  background-color: rgb(5, 150, 5);
+}
 .kanbas-red-btn {
   color: white;
   background-color: rgb(221, 48, 48);

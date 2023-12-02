@@ -41,7 +41,6 @@ export const account = async () => {
 
 export const updateUser = async (updatedUser) => {
   try {
-    console.log(updatedUser);
     const response = await axios.put(
       `${USERS_API}/${updatedUser._id}`,
       updatedUser
@@ -82,6 +81,15 @@ export const findUserById = async (id) => {
 export const deleteUser = async (user) => {
   try {
     const response = await axios.delete(`${USERS_API}/${user._id}`);
+    return response.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const findProfileById = async (id) => {
+  try {
+    const response = await axios.get(`${USERS_API}/${id}`);
     return response.data;
   } catch (err) {
     console.log(err);

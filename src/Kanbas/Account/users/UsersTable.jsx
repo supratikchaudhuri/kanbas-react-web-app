@@ -16,6 +16,10 @@ function UsersTable() {
   };
 
   const createUser = async () => {
+    if (user.username === "" || user.password === "") {
+      alert("Username and password are required");
+      return;
+    }
     const u = await client.createUser(user);
     setUsers([u, ...users]);
   };
@@ -27,7 +31,7 @@ function UsersTable() {
 
   const updateUser = async () => {
     try {
-      const status = await client.updateUser(user);
+      const ack = await client.updateUser(user);
       setUsers(users.map((u) => (u._id === user._id ? user : u)));
     } catch (err) {
       console.log(err);
@@ -125,13 +129,17 @@ function UsersTable() {
                 <input
                   className="form-control"
                   type="date"
-                  value={user.dob}
+                  value={new Date(user.dob).toLocaleDateString("en-CA")}
                   onChange={(e) => setUser({ ...user, dob: e.target.value })}
                 />
               </td>
               <td>
-                <button onClick={createUser}> Add </button>
-                <button> Select </button>
+                <button className="btn kanbas-blue-btn" onClick={createUser}>
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+                <button className="btn kanbas-green-btn" onClick={updateUser}>
+                  <i class="fa-solid fa-circle-check"></i>
+                </button>
               </td>
             </tr>
 
@@ -140,7 +148,7 @@ function UsersTable() {
                 <td>
                   <Link
                     className="color-red pointer"
-                    to={`/kanbas/account/${user._id}`}
+                    to={`/kanbas/user/${user._id}`}
                   >
                     {user.username}
                   </Link>
@@ -151,8 +159,20 @@ function UsersTable() {
                 <td>{user.role}</td>
                 <td>{new Date(user.dob).toLocaleDateString("en-CA")}</td>
                 <td>
-                  <button>Edit</button>
-                  <button onClick={(e) => deleteUser(user)}>Delete</button>
+                  <button
+                    className="btn kanbas-yellow-btn"
+                    onClick={(e) => {
+                      selectUser(user);
+                    }}
+                  >
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                  <button
+                    className="btn kanbas-red-btn"
+                    onClick={(e) => deleteUser(user)}
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
                 </td>
               </tr>
             ))}
