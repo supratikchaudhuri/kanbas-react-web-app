@@ -11,6 +11,17 @@ function UsersTable() {
     role: "USER",
   });
 
+  const sameUsernames = () => {
+    let count = 0;
+    users.forEach((u) => {
+      if (u._id !== user._id && u.username === user.username) {
+        count++;
+      }
+    });
+    console.log(count);
+    return count;
+  };
+
   const fetchUsers = async () => {
     const users = await client.findAllUsers();
     setUsers(users);
@@ -21,6 +32,11 @@ function UsersTable() {
       alert("Username and password are required");
       return;
     }
+    if (sameUsernames() > 0) {
+      alert("Username already exists");
+      return;
+    }
+
     const u = await client.createUser(user);
     setUsers([u, ...users]);
   };
@@ -32,6 +48,10 @@ function UsersTable() {
 
   const updateUser = async () => {
     try {
+      if (sameUsernames() > 0) {
+        alert("Username already exists");
+        return;
+      }
       const ack = await client.updateUser(user);
       setUsers(users.map((u) => (u._id === user._id ? user : u)));
     } catch (err) {
@@ -48,7 +68,7 @@ function UsersTable() {
     fetchUsers();
   }, []);
 
-  console.log(users);
+  //   console.log(users);
 
   return (
     <div className="container">

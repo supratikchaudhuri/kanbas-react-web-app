@@ -44,7 +44,7 @@ const Account = () => {
         ) : (
           <Routes>
             <Route path="/" element={<Navigate to="profile" />} />
-            {user ? ( // Check if user is not null
+            {user ? (
               <>
                 <Route path="profile" element={<Profile user={user} />} />
                 <Route
