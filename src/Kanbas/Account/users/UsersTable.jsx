@@ -191,7 +191,7 @@ function UsersTable() {
                   </td>
                 </tr>
 
-                {users.length === 0 ? (
+                {!users || users.length === 0 ? (
                   <div
                     className="mt-3 col width-100 alert alert-danger"
                     role="alert"

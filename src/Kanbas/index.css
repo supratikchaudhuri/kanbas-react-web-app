@@ -149,7 +149,7 @@ select {
   display: inline;
 }
 .fit-content {
-  width: fit-content;
+  width: fit-content !important;
 }
 
 /* Classes */

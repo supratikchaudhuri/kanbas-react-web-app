@@ -2,7 +2,7 @@ import axios from "axios";
 
 // TODO: credentials true
 const request = axios.create({
-  //   withCredentials: true, // turn on cookies
+  withCredentials: true, // turn on cookies
 });
 
 export const BASE_URL = process.env.REACT_APP_BASE_URL;

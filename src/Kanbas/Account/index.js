@@ -8,43 +8,52 @@ import EditProfile from "./profile/EditProfile";
 import { account } from "./users/client";
 
 const Account = () => {
-  const [user, setUser] = useState(undefined);
+  const [user, setUser] = useState(null);
 
   const getUser = async () => {
     const loggedInUser = await account();
+    setUser(loggedInUser);
     return loggedInUser;
   };
 
   useEffect(() => {
     const fetchData = async () => {
-      const _user = await getUser();
-      setUser(_user);
+      await getUser();
     };
 
     fetchData();
   }, []);
 
-  console.log(user);
-
+  console.log("user", user);
+  //   alert(typeof user);
   return (
     <div className="container main">
       {/* TODO: user not logged in login button, else display user info */}
       <div className="row root">
         <div className="mt-3">
           <i className="fa fa-bars bars color-red" aria-hidden="true"></i>
-          <h4>Profile of _____USER_____</h4>
+          {user && <h4>Profile of {user.username}'s Profile</h4>}
         </div>
         <hr className=" mt-4 mb-4" />
+
         <AccountNavigation />
-        {user === undefined ? (
-          <div className="col width-100 alert alert-danger" role="alert">
+
+        {/* <button onClick={getUser}>click</button> */}
+
+        {!user || user === "" ? (
+          <div
+            className="col width-100 alert alert-danger height-100"
+            role="alert"
+          >
             User not logged in
-            <button>Login here</button>
+            <br />
+            <a className="mt-3 btn kanbas-red-btn" href="/kanbas/signin">
+              Login here
+            </a>
           </div>
         ) : (
           <Routes>
-            <Route path="/" element={<Navigate to="profile" />} />
-            {user ? (
+            {!user || user !== "" ? (
               <>
                 <Route path="profile" element={<Profile user={user} />} />
                 <Route
@@ -53,7 +62,13 @@ const Account = () => {
                 />
               </>
             ) : (
-              <Route path="login" element={<Navigate to="/login" />} />
+              <div className="col width-100 alert alert-danger" role="alert">
+                User not logged in
+                <br />
+                <a className="mt-3 btn kanbas-red-btn" href="/kanbas/signin">
+                  Login here
+                </a>
+              </div>
             )}
           </Routes>
         )}
