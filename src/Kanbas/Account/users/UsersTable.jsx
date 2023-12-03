@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import * as client from "./client";
 import { Link } from "react-router-dom";
 
+// TODO: edit/creating new user with existing username
 function UsersTable() {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(null);
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -47,137 +48,170 @@ function UsersTable() {
     fetchUsers();
   }, []);
 
+  console.log(users);
+
   return (
     <div className="container">
       <div className="root">
-        <h1 className="heading">User List</h1>
-        <hr />
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Username</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>D.O.B</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <input
-                  className="form-control"
-                  placeholder="Username *"
-                  value={user.username}
-                  onChange={(e) =>
-                    setUser({ ...user, username: e.target.value })
-                  }
-                />
-                <input
-                  className="form-control"
-                  type="password"
-                  value={user.password}
-                  placeholder="Password *"
-                  onChange={(e) =>
-                    setUser({ ...user, password: e.target.value })
-                  }
-                />
-              </td>
-              <td>
-                <input
-                  className="form-control"
-                  value={user.firstName}
-                  onChange={(e) =>
-                    setUser({ ...user, firstName: e.target.value })
-                  }
-                />
-              </td>
-              <td>
-                <input
-                  className="form-control"
-                  value={user.lastName}
-                  onChange={(e) =>
-                    setUser({ ...user, lastName: e.target.value })
-                  }
-                />
-              </td>
-              <td>
-                <input
-                  className="form-control"
-                  type="email"
-                  value={user.email}
-                  onChange={(e) => setUser({ ...user, email: e.target.value })}
-                />
-              </td>
-              <td>
-                <select
-                  className="form-control"
-                  value={user.role}
-                  onChange={(e) => setUser({ ...user, role: e.target.value })}
-                >
-                  <option value="USER">User</option>
-                  <option value="ADMIN">Admin</option>
-                  <option value="FACULTY">Faculty</option>
-                  <option value="STUDENT">Student</option>
-                  <option value="INSTRUCTOR">INSTRUCTOR</option>
-                </select>
-              </td>
+        {users === null ? (
+          <div className="col width-100 alert alert-danger" role="alert">
+            Please{" "}
+            <a className="text-red" href="/signin">
+              signin here
+            </a>{" "}
+            to access user list
+          </div>
+        ) : (
+          <>
+            <h1 className="heading">User List</h1>
+            <hr />
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>D.O.B</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      className="form-control"
+                      placeholder="Username *"
+                      value={user.username}
+                      onChange={(e) =>
+                        setUser({ ...user, username: e.target.value })
+                      }
+                    />
+                    <input
+                      className="form-control"
+                      type="password"
+                      value={user.password}
+                      placeholder="Password *"
+                      onChange={(e) =>
+                        setUser({ ...user, password: e.target.value })
+                      }
+                    />
+                  </td>
+                  <td>
+                    <input
+                      className="form-control"
+                      value={user.firstName}
+                      onChange={(e) =>
+                        setUser({ ...user, firstName: e.target.value })
+                      }
+                    />
+                  </td>
+                  <td>
+                    <input
+                      className="form-control"
+                      value={user.lastName}
+                      onChange={(e) =>
+                        setUser({ ...user, lastName: e.target.value })
+                      }
+                    />
+                  </td>
+                  <td>
+                    <input
+                      className="form-control"
+                      type="email"
+                      value={user.email}
+                      onChange={(e) =>
+                        setUser({ ...user, email: e.target.value })
+                      }
+                    />
+                  </td>
+                  <td>
+                    <select
+                      className="form-control"
+                      value={user.role}
+                      onChange={(e) =>
+                        setUser({ ...user, role: e.target.value })
+                      }
+                    >
+                      <option value="USER">User</option>
+                      <option value="ADMIN">Admin</option>
+                      <option value="FACULTY">Faculty</option>
+                      <option value="STUDENT">Student</option>
+                      <option value="INSTRUCTOR">INSTRUCTOR</option>
+                    </select>
+                  </td>
 
-              <td>
-                <input
-                  className="form-control"
-                  type="date"
-                  value={new Date(user.dob).toLocaleDateString("en-CA")}
-                  onChange={(e) => setUser({ ...user, dob: e.target.value })}
-                />
-              </td>
-              <td>
-                <button className="btn kanbas-blue-btn" onClick={createUser}>
-                  <i class="fa-solid fa-plus"></i>
-                </button>
-                <button className="btn kanbas-green-btn" onClick={updateUser}>
-                  <i class="fa-solid fa-circle-check"></i>
-                </button>
-              </td>
-            </tr>
+                  <td>
+                    <input
+                      className="form-control"
+                      type="date"
+                      value={new Date(user.dob).toLocaleDateString("en-CA")}
+                      onChange={(e) =>
+                        setUser({ ...user, dob: e.target.value })
+                      }
+                    />
+                  </td>
+                  <td>
+                    <button
+                      className="btn kanbas-blue-btn"
+                      onClick={createUser}
+                    >
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <button
+                      className="btn kanbas-green-btn"
+                      onClick={updateUser}
+                    >
+                      <i class="fa-solid fa-circle-check"></i>
+                    </button>
+                  </td>
+                </tr>
 
-            {users.map((user) => (
-              <tr key={user._id}>
-                <td>
-                  <Link
-                    className="color-red pointer"
-                    to={`/kanbas/user/${user._id}`}
+                {users.length === 0 ? (
+                  <div
+                    className="mt-3 col width-100 alert alert-danger"
+                    role="alert"
                   >
-                    {user.username}
-                  </Link>
-                </td>
-                <td>{user.firstName}</td>
-                <td>{user.lastName}</td>
-                <td>{user.email}</td>
-                <td>{user.role}</td>
-                <td>{new Date(user.dob).toLocaleDateString("en-CA")}</td>
-                <td>
-                  <button
-                    className="btn kanbas-yellow-btn"
-                    onClick={(e) => {
-                      selectUser(user);
-                    }}
-                  >
-                    <i class="fa-solid fa-pen"></i>
-                  </button>
-                  <button
-                    className="btn kanbas-red-btn"
-                    onClick={(e) => deleteUser(user)}
-                  >
-                    <i class="fa-solid fa-trash"></i>
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                    No users found. Please add some users
+                  </div>
+                ) : (
+                  users.map((user) => (
+                    <tr key={user._id}>
+                      <td>
+                        <Link
+                          className="color-red pointer"
+                          to={`/kanbas/user/${user._id}`}
+                        >
+                          {user.username}
+                        </Link>
+                      </td>
+                      <td>{user.firstName}</td>
+                      <td>{user.lastName}</td>
+                      <td>{user.email}</td>
+                      <td>{user.role}</td>
+                      <td>{new Date(user.dob).toLocaleDateString("en-CA")}</td>
+                      <td>
+                        <button
+                          className="btn kanbas-yellow-btn"
+                          onClick={() => selectUser(user)}
+                        >
+                          <i className="fas fa-pen"></i>
+                        </button>
+                        <button
+                          className="btn kanbas-red-btn"
+                          onClick={() => deleteUser(user)}
+                        >
+                          <i className="fas fa-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
+          </>
+        )}
       </div>
     </div>
   );
