@@ -42,6 +42,7 @@ function UsersTable() {
   };
 
   const selectUser = async (user) => {
+    window.scrollTo(0, 0);
     const u = await client.findUserById(user._id);
     setUser(u);
   };
