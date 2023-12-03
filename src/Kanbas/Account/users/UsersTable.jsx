@@ -3,6 +3,8 @@ import * as client from "./client";
 import { Link } from "react-router-dom";
 
 // TODO: edit/creating new user with existing username
+// TODO: signe din user can delete themselves?
+
 function UsersTable() {
   const [users, setUsers] = useState(null);
   const [user, setUser] = useState({
