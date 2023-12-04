@@ -10,11 +10,11 @@ export const USERS_API = `${BASE_URL}/users`;
 
 export const signin = async (credentials) => {
   try {
-    console.log(request);
     const response = await request.post(`${USERS_API}/signin`, credentials);
     console.log("response onf signin", response.data);
     return response.data;
   } catch (err) {
+    console.log(err);
     console.log(err);
   }
 };
