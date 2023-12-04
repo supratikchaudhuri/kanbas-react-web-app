@@ -12,8 +12,11 @@ const Account = () => {
 
   const getUser = async () => {
     const loggedInUser = await account();
-    setUser(loggedInUser);
-    return loggedInUser;
+    if (loggedInUser) {
+      setUser(loggedInUser);
+      return true;
+    }
+    return false;
   };
 
   useEffect(() => {
@@ -25,20 +28,18 @@ const Account = () => {
   }, []);
 
   console.log("user", user);
-  //   alert(typeof user);
+
   return (
     <div className="container main">
       {/* TODO: user not logged in login button, else display user info */}
       <div className="row root">
         <div className="mt-3">
           <i className="fa fa-bars bars color-red" aria-hidden="true"></i>
-          {user && <h4>Profile of {user.username}'s Profile</h4>}
+          {user && <h4>{user.username}'s Profile</h4>}
         </div>
         <hr className=" mt-4 mb-4" />
 
         <AccountNavigation />
-
-        {/* <button onClick={getUser}>click</button> */}
 
         {!user || user === "" ? (
           <div
@@ -53,23 +54,14 @@ const Account = () => {
           </div>
         ) : (
           <Routes>
-            {!user || user !== "" ? (
-              <>
-                <Route path="profile" element={<Profile user={user} />} />
-                <Route
-                  path="edit-profile"
-                  element={<EditProfile user={user} />}
-                />
-              </>
-            ) : (
-              <div className="col width-100 alert alert-danger" role="alert">
-                User not logged in
-                <br />
-                <a className="mt-3 btn kanbas-red-btn" href="/kanbas/signin">
-                  Login here
-                </a>
-              </div>
-            )}
+            <>
+              <Route path="/" element={<Navigate to="profile" />} />
+              <Route path="profile" element={<Profile user={user} />} />
+              <Route
+                path="edit-profile"
+                element={<EditProfile user={user} />}
+              />
+            </>
           </Routes>
         )}
       </div>

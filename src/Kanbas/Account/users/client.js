@@ -12,7 +12,7 @@ export const signin = async (credentials) => {
   try {
     console.log(request);
     const response = await request.post(`${USERS_API}/signin`, credentials);
-    console.log(response);
+    console.log("response onf signin", response.data);
     return response.data;
   } catch (err) {
     console.log(err);
@@ -41,7 +41,6 @@ export const signout = async () => {
 export const account = async () => {
   try {
     const response = await request.post(`${USERS_API}/account`);
-    console.log(response);
     return response.data;
   } catch (err) {
     console.log(err);
@@ -54,9 +53,10 @@ export const updateUser = async (updatedUser) => {
       `${USERS_API}/${updatedUser._id}`,
       updatedUser
     );
-    return response.data;
+    return { status: response.status, data: response.data };
   } catch (err) {
     console.log(err);
+    return { status: err.response.status, error: err.response.data };
   }
 };
 

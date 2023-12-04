@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as client from "../users/client";
 
 const EditProfile = ({ user }) => {
@@ -6,21 +6,25 @@ const EditProfile = ({ user }) => {
 
   const updateUser = async (e) => {
     e.preventDefault();
-    const status = await client.updateUser(updatedUser);
-    console.log(status);
+    const { status, error } = await client.updateUser(updatedUser);
 
-    window.location.href = "/kanbas/account";
+    if (status === 200) {
+      window.location.href = "/kanbas/account";
+    } else {
+      alert("Error updating user. Make sure username is unique.");
+    }
   };
-
-  console.log(updatedUser);
 
   return (
     <div className="col profile-details">
       <a href="." className="float-end">
-        <button className="btn btn-light kanbas-btn-gray btn-border">
+        <a
+          className="btn btn-light kanbas-btn-gray btn-border"
+          href="/kanbas/account/profile"
+        >
           <i className="fa fa-pencil" aria-hidden="true"></i>
           Cancel Editing
-        </button>
+        </a>
       </a>
       <div className="row">
         <div className="col-12">
@@ -128,7 +132,6 @@ const EditProfile = ({ user }) => {
                 Username:
               </label>
               <input
-                disabled
                 type="text"
                 className="form-control"
                 id="username-input"
@@ -146,12 +149,11 @@ const EditProfile = ({ user }) => {
                 Password:
               </label>
               <input
-                disabled
                 type="password"
                 className="form-control"
                 id="password-input"
                 name="password"
-                value={user.password}
+                value={updatedUser.password}
                 onChange={(e) =>
                   setUpdatedUser({
                     ...updatedUser,
@@ -159,22 +161,6 @@ const EditProfile = ({ user }) => {
                   })
                 }
               />
-
-              {/* <label for="title-input" className="mt-2 fw-600">
-                Title
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="title-input"
-                value="Mr."
-              /> */}
-
-              {/* <h3 className="title mt-4">Contact</h3>
-              <p>No regitered services</p>
-
-              <h3 className="title mt-4">Biography</h3>
-              <textarea className="form-control " rows="5"></textarea> */}
 
               <h3 className="title mt-4">Links</h3>
               <form>
