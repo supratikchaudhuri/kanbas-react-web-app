@@ -250,7 +250,7 @@ const EditProfile = ({ user }) => {
 
               <hr />
               <div className="float-end mb-5">
-                <a href="index.html">
+                <a href="/kanbas/account/profile">
                   <button type="button" className="btn btn-light btn-border">
                     Cancel
                   </button>
